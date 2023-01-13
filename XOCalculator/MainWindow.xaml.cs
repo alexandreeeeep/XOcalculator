@@ -23,6 +23,7 @@ namespace XOCalculator
         public MainWindow()
         {
             InitializeComponent();
+            //ResouceMenu.Visibility= Visibility.Hidden;//hides resource menu
         }
     }
 }

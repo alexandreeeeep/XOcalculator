@@ -6,7 +6,14 @@
         xmlns:local="clr-namespace:XOCalculator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid x:Name="ResouceMenu" Visibility="Visible">
+        <TextBox Margin="70,60,611,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Margin="70,60,611,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Margin="70,90,611,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Margin="70,120,611,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Margin="70,150,611,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Margin="70,180,611,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Margin="70,210,611,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>
