@@ -25,16 +25,17 @@ namespace XOCalculator
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ResourceMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
-
             if (ResouceMenu.Visibility != Visibility.Hidden)
             {
                 ResouceMenu.Visibility = Visibility.Hidden;//hides resource menu
+                ShowAndHideResourcesButton.Content = "show resources";
             }
             else
             {
                 ResouceMenu.Visibility = Visibility.Visible;//unhides resource menu
+                ShowAndHideResourcesButton.Content = "hide resources";
             }
         }
     }
