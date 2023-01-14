@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="XOcalculator" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
+        <Canvas x:Name="CalculationMenu" Visibility="Hidden">
+            <TextBox HorizontalAlignment="Left" Margin="150,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
+        </Canvas>
         <Canvas x:Name="ResouceMenu" Visibility="Visible">
             <TextBox HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>

@@ -31,10 +31,12 @@ namespace XOCalculator
             {
                 ResouceMenu.Visibility = Visibility.Hidden;//hides resource menu
                 ShowAndHideResourcesButton.Content = "show resources";
+                CalculationMenu.Visibility = Visibility.Visible;
             }
             else
             {
                 ResouceMenu.Visibility = Visibility.Visible;//unhides resource menu
+                CalculationMenu.Visibility = Visibility.Hidden;
                 ShowAndHideResourcesButton.Content = "hide resources";
             }
         }
