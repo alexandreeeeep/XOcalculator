@@ -40,5 +40,10 @@ namespace XOCalculator
                 ShowAndHideResourcesButton.Content = "hide resources";
             }
         }
+
+        private void ValueSearched(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
     }
 }
