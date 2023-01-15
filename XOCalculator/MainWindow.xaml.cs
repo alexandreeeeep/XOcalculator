@@ -49,10 +49,19 @@ namespace XOCalculator
         }
         private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation
         {
-            StreamReader file = new StreamReader("CommonItems.txt");
-            OutputValue.Text = file.ReadLine();
-            file.Close();
             
+            string ItemName = FindValue();
+            OutputValue.Text = ItemName;
+        }
+        string FindValue()
+        {
+        StreamReader file = new StreamReader("CommonItems.txt");
+        string ItemName = file.ReadLine();
+        foreach(char Letter in ItemName) {
+              return Letter.ToString();
+            }
+        file.Close();
+        return ItemName;
         }
     }
 }
