@@ -41,7 +41,7 @@ namespace XOCalculator
             }
         }
 
-        private void ValueSearched(object sender, DependencyPropertyChangedEventArgs e)
+        private void ValueSearched(object sender, DependencyPropertyChangedEventArgs e)//search bar for resources
         {
 
         }
