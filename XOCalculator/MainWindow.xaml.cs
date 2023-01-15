@@ -22,7 +22,7 @@ namespace XOCalculator
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();//starts UI
         }
 
         private void ResourceMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
