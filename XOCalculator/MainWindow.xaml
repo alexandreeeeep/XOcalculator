@@ -9,7 +9,8 @@
     <Grid>
         <Canvas x:Name="CalculationMenu" Visibility="Hidden">
             <TextBox x:Name ="ItemSearch"  HorizontalAlignment="Left" Margin="250,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" DataContextChanged="ValueSearched"></TextBox>
-            
+            <Button Content="hide resources" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Top" Click="Calculate"/>
+
             <TextBox x:Name ="scrapQuantity" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox x:Name ="copperQuantity" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox x:Name ="wiresQuantity" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>

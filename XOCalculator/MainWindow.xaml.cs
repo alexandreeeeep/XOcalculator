@@ -45,5 +45,9 @@ namespace XOCalculator
         {
 
         }
+        private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation
+        {
+
+        }
     }
 }
