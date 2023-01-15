@@ -9,7 +9,8 @@
     <Grid>
         <Canvas x:Name="CalculationMenu" Visibility="Hidden">
             <TextBox x:Name ="ItemSearch"  HorizontalAlignment="Left" Margin="250,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" DataContextChanged="ValueSearched"></TextBox>
-            <Button Content="hide resources" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Top" Click="Calculate"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" Margin="330,230,0,0" VerticalAlignment="Top" Click="Calculate"/>
+            <TextBlock x:Name="OutputValue" Text="" Margin="200,350,0,0" VerticalAlignment="Top"></TextBlock>
 
             <TextBox x:Name ="scrapQuantity" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox x:Name ="copperQuantity" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
@@ -26,6 +27,7 @@
             <Label Content="Plastic Quantity" HorizontalAlignment="Left" Margin="45,220,0,0" VerticalAlignment="Top"/>
             <Label Content="Electronics Quantity" HorizontalAlignment="Left" Margin="45,270,0,0" VerticalAlignment="Top"/>
             <Label Content="Uranium Quantity" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
+            <TextBox Canvas.Left="271" TextWrapping="Wrap" Text="TextBox" Canvas.Top="270" Width="120"/>
         </Canvas>
         <Canvas x:Name="ResouceMenu" Visibility="Visible">
             <TextBox x:Name = "ScrapCost" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
