@@ -50,7 +50,7 @@ namespace XOCalculator
         private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation
         {
             
-            string ItemName = FindValue("mediumwheel");
+            string ItemName = FindValue("mediumwheelst");
             OutputValue.Text = ItemName;
         }
         string FindValue(string SearchItem)
@@ -73,7 +73,7 @@ namespace XOCalculator
                     else { break; }
             }
         }
-        return ItemName[0];
+        return "Item Not Found";
         }
     }
 }
