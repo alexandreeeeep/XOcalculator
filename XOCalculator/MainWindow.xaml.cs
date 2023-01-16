@@ -49,8 +49,7 @@ namespace XOCalculator
         }
         private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation
         {
-            
-            string ItemName = FindValue(ItemSearch.Text.ToLower().ToString());
+            string ItemName = FindValue(ItemSearch.Text.ToLower().ToString());//takes user input and searches for it in algorithm
             OutputValue.Text = ItemName;
         }
         string FindValue(string SearchItem)
