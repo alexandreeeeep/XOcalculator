@@ -50,18 +50,30 @@ namespace XOCalculator
         private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation
         {
             
-            string ItemName = FindValue();
+            string ItemName = FindValue("mediumwheel");
             OutputValue.Text = ItemName;
         }
-        string FindValue()
+        string FindValue(string SearchItem)
         {
-        StreamReader file = new StreamReader("CommonItems.txt");
-        string ItemName = file.ReadLine();
-        foreach(char Letter in ItemName) {
-              return Letter.ToString();
+            // Calling the ReadAllLines() function
+            string ItemFound;
+        string[] ItemName = File.ReadAllLines("CommonItems.txt");
+        foreach (string line in ItemName)//itarates threw each line
+        {
+            ItemFound = "";
+            foreach (char c in line) {//itarates threw each letter 
+                    if (c != '_')//finds the end of the first word
+                    {
+                        ItemFound += c.ToString();
+                    }
+                    else if(ItemFound==SearchItem)
+                    {
+                        return line;
+                    }
+                    else { break; }
             }
-        file.Close();
-        return ItemName;
+        }
+        return ItemName[0];
         }
     }
 }
