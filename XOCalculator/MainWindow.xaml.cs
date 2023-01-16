@@ -73,7 +73,7 @@ namespace XOCalculator
                     else { break; }
             }
         }
-        return "Item Not Found";
+        return "Item Not Found";//returns if item not found
         }
     }
 }
