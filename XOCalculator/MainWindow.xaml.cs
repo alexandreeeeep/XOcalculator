@@ -57,7 +57,7 @@ namespace XOCalculator
         {
             // Calling the ReadAllLines() function
             string ItemFound;
-        string[] ItemName = File.ReadAllLines("CommonItems.txt");
+        string[] ItemName = File.ReadAllLines("Items.txt");
         foreach (string line in ItemName)//itarates threw each line
         {
             ItemFound = "";
