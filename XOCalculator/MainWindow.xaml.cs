@@ -56,23 +56,24 @@ namespace XOCalculator
         {
             // Calling the ReadAllLines() function
             string ItemFound;
-        string[] ItemName = File.ReadAllLines("Items.txt");
-        foreach (string line in ItemName)//itarates threw each line
-        {
-            ItemFound = "";
-            foreach (char c in line) {//itarates threw each letter 
+            string[] ItemName = File.ReadAllLines("Items.txt");
+            Array.Sort(ItemName);//sorts it into alphabetical order
+            foreach (string line in ItemName)//itarates threw each line
+            {
+                ItemFound = "";
+                foreach (char c in line) {//itarates threw each letter 
                     if (c != '_')//finds the end of the first word
                     {
                         ItemFound += c.ToString();
                     }
-                    else if(ItemFound==SearchItem)
+                    else if(ItemFound==SearchItem && ItemFound != "")
                     {
                         return line;
                     }
                     else { break; }
+                }
             }
-        }
-        return "Item Not Found";//returns if item not found
+            return "Item Not Found";//returns if item not found
         }
     }
 }
