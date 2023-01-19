@@ -118,7 +118,7 @@ namespace XOCalculator
                     Item2Value.Text = CalculateCostOfItem(Item2Value.Text).ToString();
                     Item3Value.Text = CalculateCostOfItem(Item3Value.Text).ToString();
                     //calculates end result
-                    OutputValue.Text = (float.Parse(ScrapCost.Text) / 100f * float.Parse(scrapQuantity.Text) +
+                    OutputValue.Text = "Cost: "+(float.Parse(ScrapCost.Text) / 100f * float.Parse(scrapQuantity.Text) +
                         float.Parse(copperQuantity.Text) * float.Parse(CopperCost.Text) / 100f +
                         float.Parse(WiresCost.Text) / 100f * float.Parse(wiresQuantity.Text)+
                         float.Parse(BatterysCost.Text)/10f *float.Parse(batterysQuantity.Text)+
