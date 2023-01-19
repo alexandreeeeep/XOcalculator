@@ -133,6 +133,9 @@ namespace XOCalculator
             plasticQuantity.Text = Item[5];
             electronicsQuantity.Text = Item[6];
             uraniumQuantity.Text = Item[7];
+
+            //runs the program showing the cost
+            Calculate(sender, e);
         }
         string[] SeparateList(string ItemName)//finds the name in the text file
         {
