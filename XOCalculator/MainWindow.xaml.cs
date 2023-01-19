@@ -124,7 +124,10 @@ namespace XOCalculator
                         float.Parse(BatterysCost.Text)/10f *float.Parse(batterysQuantity.Text)+
                         float.Parse(PlasticCost.Text)/100f *float.Parse(plasticQuantity.Text)+
                         float.Parse(ElectronicsCost.Text)/10f*float.Parse(electronicsQuantity.Text)+
-                        float.Parse(UraniumCost.Text)/10f*float.Parse(electronicsQuantity.Text)
+                        float.Parse(UraniumCost.Text)/10f*float.Parse(electronicsQuantity.Text)+
+                        float.Parse(Item1Value.Text) * float.Parse(Item1Value.Text) +
+                        float.Parse(Item2Value.Text) * float.Parse(Item2Value.Text) +
+                        float.Parse(Item3Value.Text) * float.Parse(Item3Value.Text)
                         ).ToString();
                 }
                 else
