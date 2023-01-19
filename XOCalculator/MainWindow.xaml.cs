@@ -90,13 +90,13 @@ namespace XOCalculator
                 UraniumCost.Text = "0";
             }
             if (Item1Count.Text == ""){
-                Item1Count.Text = "0";
+                Item1Count.Text = "1";
             }
             if (Item2Count.Text == ""){
-                Item2Count.Text = "0";
+                Item2Count.Text = "1";
             }
             if (Item3Count.Text == ""){
-                Item3Count.Text = "0";
+                Item3Count.Text = "1";
             }
             if (Item1Value.Text == ""){
                 Item1Value.Text = "0";
@@ -125,9 +125,9 @@ namespace XOCalculator
                         float.Parse(PlasticCost.Text)/100f *float.Parse(plasticQuantity.Text)+
                         float.Parse(ElectronicsCost.Text)/10f*float.Parse(electronicsQuantity.Text)+
                         float.Parse(UraniumCost.Text)/10f*float.Parse(electronicsQuantity.Text)+
-                        float.Parse(Item1Value.Text) * float.Parse(Item1Value.Text) +
-                        float.Parse(Item2Value.Text) * float.Parse(Item2Value.Text) +
-                        float.Parse(Item3Value.Text) * float.Parse(Item3Value.Text)
+                        float.Parse(Item1Value.Text) * float.Parse(Item1Count.Text) +
+                        float.Parse(Item2Value.Text) * float.Parse(Item2Count.Text) +
+                        float.Parse(Item3Value.Text) * float.Parse(Item3Count.Text)
                         ).ToString();
                 }
                 else
@@ -149,7 +149,8 @@ namespace XOCalculator
             {
                 return Result;
             }
-            string[] Item = SeparateList(FindValue(ItemName));
+            string[] Item = SeparateList(FindValue(ItemName));//finds the item and creates list
+            //calculates value of item and calculates other items if needed
             return float.Parse(ScrapCost.Text) / 100f * float.Parse(Item[1]) +
             float.Parse(Item[2]) * float.Parse(CopperCost.Text) / 100f +
                float.Parse(WiresCost.Text) / 100 * float.Parse(Item[3]) +
