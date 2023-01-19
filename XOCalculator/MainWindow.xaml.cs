@@ -42,9 +42,81 @@ namespace XOCalculator
                 ShowAndHideResourcesButton.Content = "hide resources";
             }
         }
-        private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation
-        { 
+        private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation for the Item
+        {
+            //validates if there is an input
+            if (scrapQuantity.Text == "")
+            {
+                scrapQuantity.Text = "0";
+            }
+            if (copperQuantity.Text == "")
+            {
+                copperQuantity.Text = "0";
+            }
+            if(wiresQuantity.Text == "")
+            {
+                wiresQuantity.Text = "0";
+            }
+            if (batterysQuantity.Text== "")
+            {
+                batterysQuantity.Text = "0";
+            }
+            if (plasticQuantity.Text == "")
+            {
+                plasticQuantity.Text = "0";
+            }
+            if (electronicsQuantity.Text == "")
+            {
+                electronicsQuantity.Text = "0";
+            }
+            if (uraniumQuantity.Text == "")
+            {
+                uraniumQuantity.Text = "0";
+            }
+            if (ScrapCost.Text == "")
+            {
+                ScrapCost.Text = "0";
+            }
+            if (CopperCost.Text == "")
+            {
+                CopperCost.Text = "0";
+            }
+            if (WiresCost.Text == "")
+            {
+                WiresCost.Text = "0";
+            }
+            if (BatterysCost.Text == "")
+            {
+                BatterysCost.Text = "0";
+            }
+            if (PlasticCost.Text == "")
+            {
+                PlasticCost.Text = "0";
+            }
+            if (ElectronicsCost.Text == "")
+            {
+                ElectronicsCost.Text = "0";
+            }
+            if (UraniumCost.Text == "")
+            {
+                UraniumCost.Text = "0";
+            }
 
+            //valdades if there is an incorrect input
+            if ((scrapQuantity.Text+copperQuantity.Text+wiresQuantity.Text + batterysQuantity.Text + plasticQuantity.Text + electronicsQuantity.Text + uraniumQuantity.Text).All("1234567890.".Contains))
+            {
+                if((ScrapCost.Text + CopperCost.Text + WiresCost.Text + BatterysCost.Text + PlasticCost.Text + ElectronicsCost.Text + UraniumCost.Text).All("1234567890.".Contains)){
+                    //calculation goes here
+                }
+                else
+                {
+                    OutputValue.Text = "Resource costs must be a number";
+                }
+            }
+            else
+            {
+                OutputValue.Text = "Resource Quantity must be a number";
+            }
         }
 
         private void Search(object sender, RoutedEventArgs e)//Runs the calculation
@@ -60,7 +132,7 @@ namespace XOCalculator
             batterysQuantity.Text = Item[4];
             plasticQuantity.Text = Item[5];
             electronicsQuantity.Text = Item[6];
-            uraiumQuantity.Text = Item[7];
+            uraniumQuantity.Text = Item[7];
         }
         string[] SeparateList(string ItemName)//finds the name in the text file
         {
