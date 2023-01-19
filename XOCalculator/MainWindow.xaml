@@ -14,6 +14,13 @@
             <TextBlock x:Name="OutputValue" Text="" Margin="200,350,0,0" VerticalAlignment="Top"></TextBlock>
             <Button Content="Search" Click="Search" Margin="493,129,255,335"/>
 
+
+            <Label Content="Item 1" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="278" Canvas.Top="220"/>
+            <Label Content="Item 1 amount" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="256" Canvas.Top="270"/>
+            <Label Content="Item 2" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="423" Canvas.Top="220"/>
+            <Label Content="Item 2 amount" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="400" Canvas.Top="270"/>
+            <Label Content="Item 3" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="568" Canvas.Top="219"/>
+            <Label Content="Item 3 amount" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="546" Canvas.Top="270"/>
             <TextBox x:Name="Item1Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="250"></TextBox>
             <TextBox x:Name="Item2Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="250"></TextBox>
             <TextBox x:Name="Item3Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="250"></TextBox>
