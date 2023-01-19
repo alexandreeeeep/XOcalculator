@@ -114,6 +114,10 @@ namespace XOCalculator
                 if ((ScrapCost.Text + CopperCost.Text + WiresCost.Text + BatterysCost.Text + PlasticCost.Text + ElectronicsCost.Text + UraniumCost.Text).All("1234567890.".Contains)) {
                     //calculation goes here
 
+                    //sets name of item
+                    ItemName1.Content = Item[8];
+                    ItemName2.Content = Item[10];
+                    ItemName3.Content = Item[12];
                     Item1Value.Text = CalculateCostOfItem(Item1Value.Text).ToString();
                     Item2Value.Text = CalculateCostOfItem(Item2Value.Text).ToString();
                     Item3Value.Text = CalculateCostOfItem(Item3Value.Text).ToString();
@@ -150,6 +154,10 @@ namespace XOCalculator
                 return Result;
             }
             string[] Item = SeparateList(FindValue(ItemName));//finds the item and creates list
+            if (Item[0] == "Item Not Found")
+            {
+                return 0f;
+            }
             //calculates value of item and calculates other items if needed
             return float.Parse(ScrapCost.Text) / 100f * float.Parse(Item[1]) +
             float.Parse(Item[2]) * float.Parse(CopperCost.Text) / 100f +
@@ -186,7 +194,10 @@ namespace XOCalculator
             Item3Value.Text = CalculateCostOfItem(Item[12]).ToString();
             Item3Count.Text = Item[13];
             //runs the program showing the cost
-            Calculate(sender, e);
+            if (Item[0] != "Item Not Found")//shows an error message if item is not found
+            {
+                Calculate(sender, e);
+            }
         }
         string[] SeparateList(string ItemName)//finds the name in the text file
         {
