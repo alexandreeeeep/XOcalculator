@@ -21,11 +21,11 @@
             <Label Content="Item 2 amount" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="400" Canvas.Top="270"/>
             <Label Content="Item 3" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="568" Canvas.Top="219"/>
             <Label Content="Item 3 amount" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="546" Canvas.Top="270"/>
-            <TextBox x:Name="Item1Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="250"></TextBox>
-            <TextBox x:Name="Item2Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="250"></TextBox>
+            <TextBox x:Name="Item1Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="250"></TextBox>
+            <TextBox x:Name="Item2Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="250"></TextBox>
             <TextBox x:Name="Item3Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="250"></TextBox>
-            <TextBox x:Name="Item1Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="300"></TextBox>
-            <TextBox x:Name="Item2Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="300"></TextBox>
+            <TextBox x:Name="Item1Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="300"></TextBox>
+            <TextBox x:Name="Item2Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="300"></TextBox>
             <TextBox x:Name="Item3Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="300"></TextBox>
 
 
