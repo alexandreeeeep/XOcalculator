@@ -42,17 +42,44 @@ namespace XOCalculator
                 ShowAndHideResourcesButton.Content = "hide resources";
             }
         }
-
-        private void ValueSearched(object sender, DependencyPropertyChangedEventArgs e)//search bar for resources
-        {
+        private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation
+        { 
 
         }
-        private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation
+
+        private void Search(object sender, RoutedEventArgs e)//Runs the calculation
         {
             string ItemName = FindValue(ItemSearch.Text.ToLower().ToString());//takes user input and searches for it in algorithm
-            OutputValue.Text = ItemName;
+            string[] Item = SeparateList(ItemName);
+            OutputValue.Text = Item[0];
+
+            //setting amount boxes
+            scrapQuantity.Text = Item[1];
+            copperQuantity.Text = Item[2];
+            wiresQuantity.Text = Item[3];
+            batterysQuantity.Text = Item[4];
+            plasticQuantity.Text = Item[5];
+            electronicsQuantity.Text = Item[6];
+            uraiumQuantity.Text = Item[7];
         }
-        string FindValue(string SearchItem)
+        string[] SeparateList(string ItemName)//finds the name in the text file
+        {
+            string[] Item = new string[] { "","","","","","","","", "", "", "", "", "", "" };
+            int CountForList = 0;
+            for (int i = 0; i < ItemName.Length;i++)
+            {//itarates threw each letter
+                if (ItemName[i] != '_')//finds the end of the first word
+                {
+                    Item[CountForList] += ItemName[i];
+                }
+                else
+                {
+                    CountForList++;
+                }
+            }
+            return Item;
+        }
+        string FindValue(string SearchItem)//finds the name in the text file
         {
             // Calling the ReadAllLines() function
             string ItemFound;
@@ -61,12 +88,13 @@ namespace XOCalculator
             foreach (string line in ItemName)//itarates threw each line
             {
                 ItemFound = "";
-                foreach (char c in line) {//itarates threw each letter 
+                foreach (char c in line)
+                {//itarates threw each letter 
                     if (c != '_')//finds the end of the first word
                     {
                         ItemFound += c.ToString();
                     }
-                    else if(ItemFound==SearchItem && ItemFound != "")
+                    else if (ItemFound == SearchItem && ItemFound != "")
                     {
                         return line;
                     }
