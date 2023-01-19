@@ -44,69 +44,88 @@ namespace XOCalculator
         }
         private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation for the Item
         {
+            string ItemName = FindValue(ItemSearch.Text.ToLower().ToString());//takes user input and searches for it in algorithm
+            string[] Item = SeparateList(ItemName);
             //validates if there is an input
-            if (scrapQuantity.Text == "")
-            {
+            if (scrapQuantity.Text == ""){
                 scrapQuantity.Text = "0";
             }
-            if (copperQuantity.Text == "")
-            {
+            if (copperQuantity.Text == ""){
                 copperQuantity.Text = "0";
             }
-            if(wiresQuantity.Text == "")
-            {
+            if(wiresQuantity.Text == ""){
                 wiresQuantity.Text = "0";
             }
-            if (batterysQuantity.Text== "")
-            {
+            if (batterysQuantity.Text== ""){
                 batterysQuantity.Text = "0";
             }
-            if (plasticQuantity.Text == "")
-            {
+            if (plasticQuantity.Text == ""){
                 plasticQuantity.Text = "0";
             }
-            if (electronicsQuantity.Text == "")
-            {
+            if (electronicsQuantity.Text == ""){
                 electronicsQuantity.Text = "0";
             }
-            if (uraniumQuantity.Text == "")
-            {
+            if (uraniumQuantity.Text == ""){
                 uraniumQuantity.Text = "0";
             }
-            if (ScrapCost.Text == "")
-            {
+            if (ScrapCost.Text == ""){
                 ScrapCost.Text = "0";
             }
-            if (CopperCost.Text == "")
-            {
+            if (CopperCost.Text == ""){
                 CopperCost.Text = "0";
             }
-            if (WiresCost.Text == "")
-            {
+            if (WiresCost.Text == ""){
                 WiresCost.Text = "0";
             }
-            if (BatterysCost.Text == "")
-            {
+            if (BatterysCost.Text == ""){
                 BatterysCost.Text = "0";
             }
-            if (PlasticCost.Text == "")
-            {
+            if (PlasticCost.Text == ""){
                 PlasticCost.Text = "0";
             }
-            if (ElectronicsCost.Text == "")
-            {
+            if (ElectronicsCost.Text == ""){
                 ElectronicsCost.Text = "0";
             }
-            if (UraniumCost.Text == "")
-            {
+            if (UraniumCost.Text == ""){
                 UraniumCost.Text = "0";
+            }
+            if (Item1Count.Text == ""){
+                Item1Count.Text = "0";
+            }
+            if (Item2Count.Text == ""){
+                Item2Count.Text = "0";
+            }
+            if (Item3Count.Text == ""){
+                Item3Count.Text = "0";
+            }
+            if (Item1Value.Text == ""){
+                Item1Value.Text = "0";
+            }
+            if (Item2Value.Text == ""){
+                Item2Value.Text = "0";
+            }
+            if (Item3Value.Text == ""){
+                Item3Value.Text = "0";
             }
 
             //valdades if there is an incorrect input
             if ((scrapQuantity.Text+copperQuantity.Text+wiresQuantity.Text + batterysQuantity.Text + plasticQuantity.Text + electronicsQuantity.Text + uraniumQuantity.Text).All("1234567890.".Contains))
             {
-                if((ScrapCost.Text + CopperCost.Text + WiresCost.Text + BatterysCost.Text + PlasticCost.Text + ElectronicsCost.Text + UraniumCost.Text).All("1234567890.".Contains)){
+                if ((ScrapCost.Text + CopperCost.Text + WiresCost.Text + BatterysCost.Text + PlasticCost.Text + ElectronicsCost.Text + UraniumCost.Text).All("1234567890.".Contains)) {
                     //calculation goes here
+
+                    Item1Value.Text = CalculateCostOfItem(Item1Value.Text).ToString();
+                    Item2Value.Text = CalculateCostOfItem(Item2Value.Text).ToString();
+                    Item3Value.Text = CalculateCostOfItem(Item3Value.Text).ToString();
+                    //calculates end result
+                    OutputValue.Text = (float.Parse(ScrapCost.Text) / 100f * float.Parse(scrapQuantity.Text) +
+                        float.Parse(copperQuantity.Text) * float.Parse(CopperCost.Text) / 100f +
+                        float.Parse(WiresCost.Text) / 100f * float.Parse(wiresQuantity.Text)+
+                        float.Parse(BatterysCost.Text)/10f *float.Parse(batterysQuantity.Text)+
+                        float.Parse(PlasticCost.Text)/100f *float.Parse(plasticQuantity.Text)+
+                        float.Parse(ElectronicsCost.Text)/10f*float.Parse(electronicsQuantity.Text)+
+                        float.Parse(UraniumCost.Text)/10f*float.Parse(electronicsQuantity.Text)
+                        ).ToString();
                 }
                 else
                 {
@@ -118,9 +137,31 @@ namespace XOCalculator
                 OutputValue.Text = "Resource Quantity must be a number";
             }
         }
+        float CalculateCostOfItem(string ItemName)//calculates cost of item
+        {
+            if(ItemName == "Empty" || ItemName =="") {
+                return 0f;
+            }
+            if (float.TryParse(ItemName , out float Result))
+            {
+                return Result;
+            }
+            string[] Item = SeparateList(FindValue(ItemName));
+            return float.Parse(ScrapCost.Text) / 100f * float.Parse(Item[1]) +
+            float.Parse(Item[2]) * float.Parse(CopperCost.Text) / 100f +
+               float.Parse(WiresCost.Text) / 100 * float.Parse(Item[3]) +
+               float.Parse(Item[4]) / 10f * float.Parse(BatterysCost.Text) +
+               float.Parse(Item[5]) / 100f * float.Parse(PlasticCost.Text) +
+               float.Parse(Item[6]) / 10f * float.Parse(ElectronicsCost.Text) +
+               float.Parse(Item[7]) / 10f * float.Parse(UraniumCost.Text)
+               +CalculateCostOfItem(Item[8])*float.Parse(Item[9])+
+               CalculateCostOfItem(Item[10]) * float.Parse(Item[11])+
+               CalculateCostOfItem(Item[12]) * float.Parse(Item[13]);
+        }
 
         private void Search(object sender, RoutedEventArgs e)//Runs the calculation
         {
+            Calculate(null, null);//prevents null errors
             string ItemName = FindValue(ItemSearch.Text.ToLower().ToString());//takes user input and searches for it in algorithm
             string[] Item = SeparateList(ItemName);
             OutputValue.Text = Item[0];
@@ -133,7 +174,13 @@ namespace XOCalculator
             plasticQuantity.Text = Item[5];
             electronicsQuantity.Text = Item[6];
             uraniumQuantity.Text = Item[7];
-
+            //inputs for items
+            Item1Value.Text = CalculateCostOfItem(Item[8]).ToString();
+            Item1Count.Text = Item[9];
+            Item2Value.Text = CalculateCostOfItem(Item[10]).ToString();
+            Item2Count.Text = Item[11];
+            Item3Value.Text = CalculateCostOfItem(Item[12]).ToString();
+            Item3Count.Text = Item[13];
             //runs the program showing the cost
             Calculate(sender, e);
         }

@@ -14,6 +14,14 @@
             <TextBlock x:Name="OutputValue" Text="" Margin="200,350,0,0" VerticalAlignment="Top"></TextBlock>
             <Button Content="Search" Click="Search" Margin="493,129,255,335"/>
 
+            <TextBox x:Name="Item1Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="250"></TextBox>
+            <TextBox x:Name="Item2Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="250"></TextBox>
+            <TextBox x:Name="Item3Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="250"></TextBox>
+            <TextBox x:Name="Item1Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="300"></TextBox>
+            <TextBox x:Name="Item2Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="300"></TextBox>
+            <TextBox x:Name="Item3Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="300"></TextBox>
+
+
             <TextBox x:Name ="scrapQuantity" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox x:Name ="copperQuantity" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox x:Name ="wiresQuantity" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
