@@ -114,10 +114,19 @@ namespace XOCalculator
                 if ((ScrapCost.Text + CopperCost.Text + WiresCost.Text + BatterysCost.Text + PlasticCost.Text + ElectronicsCost.Text + UraniumCost.Text).All("1234567890.".Contains)) {
                     //calculation goes here
 
-                    //sets name of item
-                    ItemName1.Content = Item[8];
-                    ItemName2.Content = Item[10];
-                    ItemName3.Content = Item[12];
+                    //sets name of item and displays items in the box above
+                    if (!Item1Value.Text.All("1234567890.".Contains))
+                    {
+                       ItemName1.Content = Item1Value.Text;
+                    }
+                    else if (!Item2Value.Text.All("1234567890.".Contains))
+                    {
+                       ItemName2.Content = Item2Value.Text;
+                    }
+                    else if (!Item3Value.Text.All("1234567890.".Contains))
+                    {
+                        ItemName3.Content = Item3Value.Text;
+                    }
                     Item1Value.Text = CalculateCostOfItem(Item1Value.Text).ToString();
                     Item2Value.Text = CalculateCostOfItem(Item2Value.Text).ToString();
                     Item3Value.Text = CalculateCostOfItem(Item3Value.Text).ToString();
@@ -188,10 +197,13 @@ namespace XOCalculator
             uraniumQuantity.Text = Item[7];
             //inputs for items
             Item1Value.Text = CalculateCostOfItem(Item[8]).ToString();
+            ItemName1.Content = Item[8];
             Item1Count.Text = Item[9];
             Item2Value.Text = CalculateCostOfItem(Item[10]).ToString();
+            ItemName2.Content = Item[10];
             Item2Count.Text = Item[11];
             Item3Value.Text = CalculateCostOfItem(Item[12]).ToString();
+            ItemName3.Content = Item[12];
             Item3Count.Text = Item[13];
             //runs the program showing the cost
             if (Item[0] != "Item Not Found")//shows an error message if item is not found
@@ -220,6 +232,7 @@ namespace XOCalculator
         {
             // Calling the ReadAllLines() function
             string ItemFound;
+
             string[] ItemName = File.ReadAllLines("Items.txt");
             Array.Sort(ItemName);//sorts it into alphabetical order
             foreach (string line in ItemName)//itarates threw each line
@@ -235,7 +248,7 @@ namespace XOCalculator
                     {
                         return line;
                     }
-                    else { break; }
+                    else { break;}
                 }
             }
             return "Item Not Found";//returns if item not found

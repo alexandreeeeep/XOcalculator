@@ -9,7 +9,7 @@
     <Grid>
         <Canvas x:Name="CalculationMenu" Visibility="Visible">
 
-            <TextBox x:Name ="ItemSearch"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="364" Canvas.Top="128"></TextBox>
+            <TextBox x:Name ="ItemSearch" MaxLength="20" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="364" Canvas.Top="128"></TextBox>
             <Button Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Calculate" Canvas.Left="364" Canvas.Top="153"/>
             <TextBlock x:Name="OutputValue" Text="" Margin="200,350,0,0" VerticalAlignment="Top"></TextBlock>
             <Button Content="Search" Click="Search" Margin="493,129,255,335"/>
@@ -21,21 +21,21 @@
             <Label Content="Item 2 amount" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="400" Canvas.Top="270"/>
             <Label x:Name="ItemName3" Content="Item 3 Cost" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="568" Canvas.Top="219"/>
             <Label Content="Item 3 amount" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="546" Canvas.Top="270"/>
-            <TextBox x:Name="Item1Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="250"></TextBox>
-            <TextBox x:Name="Item2Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="250"></TextBox>
-            <TextBox x:Name="Item3Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="250"></TextBox>
-            <TextBox x:Name="Item1Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="300"></TextBox>
-            <TextBox x:Name="Item2Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="300"></TextBox>
-            <TextBox x:Name="Item3Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="300"></TextBox>
+            <TextBox x:Name="Item1Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="250" MaxLength="20"></TextBox>
+            <TextBox x:Name="Item2Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="250" MaxLength="20"></TextBox>
+            <TextBox x:Name="Item3Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="250" MaxLength="20"></TextBox>
+            <TextBox x:Name="Item1Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="300" MaxLength="10"></TextBox>
+            <TextBox x:Name="Item2Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="300" MaxLength="10"></TextBox>
+            <TextBox x:Name="Item3Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="300" MaxLength="10"></TextBox>
 
 
-            <TextBox x:Name ="scrapQuantity" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name ="copperQuantity" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name ="wiresQuantity" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name ="batterysQuantity" HorizontalAlignment="Left" Margin="45,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name ="plasticQuantity" HorizontalAlignment="Left" Margin="45,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name ="electronicsQuantity" HorizontalAlignment="Left" Margin="45,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name ="uraniumQuantity" HorizontalAlignment="Left" Margin="45,350,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
+            <TextBox x:Name ="scrapQuantity" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
+            <TextBox x:Name ="copperQuantity" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
+            <TextBox x:Name ="wiresQuantity" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
+            <TextBox x:Name ="batterysQuantity" HorizontalAlignment="Left" Margin="45,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
+            <TextBox x:Name ="plasticQuantity" HorizontalAlignment="Left" Margin="45,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
+            <TextBox x:Name ="electronicsQuantity" HorizontalAlignment="Left" Margin="45,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
+            <TextBox x:Name ="uraniumQuantity" HorizontalAlignment="Left" Margin="45,350,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
 
             <Label Content="Scrap Quantity" HorizontalAlignment="Left" Margin="45,20,0,0" VerticalAlignment="Top"/>
             <Label Content="Copper Quantity" HorizontalAlignment="Left" Margin="45,70,0,0" VerticalAlignment="Top"/>
@@ -46,13 +46,13 @@
             <Label Content="Uranium Quantity" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
         </Canvas>
         <Canvas x:Name="ResouceMenu" Visibility="Hidden">
-            <TextBox x:Name = "ScrapCost" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name = "CopperCost" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name = "WiresCost" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name = "BatterysCost" HorizontalAlignment="Left" Margin="45,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name = "PlasticCost" HorizontalAlignment="Left" Margin="45,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name = "ElectronicsCost" HorizontalAlignment="Left" Margin="45,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
-            <TextBox x:Name = "UraniumCost" HorizontalAlignment="Left" Margin="45,350,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
+            <TextBox MaxLength="10" x:Name = "ScrapCost" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
+            <TextBox MaxLength="10" x:Name = "CopperCost" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
+            <TextBox MaxLength="10" x:Name = "WiresCost" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
+            <TextBox MaxLength="10" x:Name = "BatterysCost" HorizontalAlignment="Left" Margin="45,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
+            <TextBox MaxLength="10" x:Name = "PlasticCost" HorizontalAlignment="Left" Margin="45,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
+            <TextBox MaxLength="10" x:Name = "ElectronicsCost" HorizontalAlignment="Left" Margin="45,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
+            <TextBox MaxLength="10" x:Name = "UraniumCost" HorizontalAlignment="Left" Margin="45,350,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <Label Content="Scrap cost per 100" HorizontalAlignment="Left" Margin="45,20,0,0" VerticalAlignment="Top"/>
             <Label Content="Copper cost per 100" HorizontalAlignment="Left" Margin="45,70,0,0" VerticalAlignment="Top"/>
             <Label Content="Wires cost per 100" HorizontalAlignment="Left" Margin="45,120,0,0" VerticalAlignment="Top"/>
