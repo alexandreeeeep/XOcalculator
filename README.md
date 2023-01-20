@@ -1,1 +1,1 @@
-#A calculator made to help crossout players calculate the cost of there items
+#A calculator made to help CrossOut players calculate the cost of their items
