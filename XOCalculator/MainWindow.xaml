@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="XOcalculator" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
-        <Canvas x:Name="CalculationMenu" Visibility="Visible">
+        <Canvas x:Name="CalculationMenu" Visibility="Hidden">
 
             <TextBox x:Name ="ItemSearch" MaxLength="20" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="364" Canvas.Top="128"></TextBox>
             <Button Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Calculate" Canvas.Left="364" Canvas.Top="153"/>
@@ -45,7 +45,7 @@
             <Label Content="Electronics Quantity" HorizontalAlignment="Left" Margin="45,270,0,0" VerticalAlignment="Top"/>
             <Label Content="Uranium Quantity" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
         </Canvas>
-        <Canvas x:Name="ResouceMenu" Visibility="Hidden">
+        <Canvas x:Name="ResouceMenu" Visibility="Visible">
             <TextBox MaxLength="10" x:Name = "ScrapCost" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "CopperCost" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "WiresCost" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
