@@ -112,36 +112,44 @@ namespace XOCalculator
             if ((scrapQuantity.Text+copperQuantity.Text+wiresQuantity.Text + batterysQuantity.Text + plasticQuantity.Text + electronicsQuantity.Text + uraniumQuantity.Text).All("1234567890.".Contains))
             {
                 if ((ScrapCost.Text + CopperCost.Text + WiresCost.Text + BatterysCost.Text + PlasticCost.Text + ElectronicsCost.Text + UraniumCost.Text).All("1234567890.".Contains)) {
-                    //calculation goes here
 
-                    //sets name of item and displays items in the box above
-                    if (!Item1Value.Text.All("1234567890.".Contains))
+                    if ((Item1Count.Text + Item2Count.Text + Item3Count.Text).All("1234567890.".Contains))
                     {
-                       ItemName1.Content = Item1Value.Text;
+                        //calcultation
+
+                        //sets name of item and displays items in the box above
+                        if (!Item1Value.Text.All("1234567890.".Contains))
+                        {
+                            ItemName1.Content = Item1Value.Text;
+                        }
+                        else if (!Item2Value.Text.All("1234567890.".Contains))
+                        {
+                            ItemName2.Content = Item2Value.Text;
+                        }
+                        else if (!Item3Value.Text.All("1234567890.".Contains))
+                        {
+                            ItemName3.Content = Item3Value.Text;
+                        }
+                        Item1Value.Text = CalculateCostOfItem(Item1Value.Text).ToString();
+                        Item2Value.Text = CalculateCostOfItem(Item2Value.Text).ToString();
+                        Item3Value.Text = CalculateCostOfItem(Item3Value.Text).ToString();
+                        //calculates end result
+                        OutputValue.Text = "Cost: " + (float.Parse(ScrapCost.Text) / 100f * float.Parse(scrapQuantity.Text) +
+                            float.Parse(copperQuantity.Text) * float.Parse(CopperCost.Text) / 100f +
+                            float.Parse(WiresCost.Text) / 100f * float.Parse(wiresQuantity.Text) +
+                            float.Parse(BatterysCost.Text) / 10f * float.Parse(batterysQuantity.Text) +
+                            float.Parse(PlasticCost.Text) / 100f * float.Parse(plasticQuantity.Text) +
+                            float.Parse(ElectronicsCost.Text) / 10f * float.Parse(electronicsQuantity.Text) +
+                            float.Parse(UraniumCost.Text) / 10f * float.Parse(electronicsQuantity.Text) +
+                            float.Parse(Item1Value.Text) * float.Parse(Item1Count.Text) +
+                            float.Parse(Item2Value.Text) * float.Parse(Item2Count.Text) +
+                            float.Parse(Item3Value.Text) * float.Parse(Item3Count.Text)
+                            ).ToString();
                     }
-                    else if (!Item2Value.Text.All("1234567890.".Contains))
+                    else
                     {
-                       ItemName2.Content = Item2Value.Text;
+                        OutputValue.Text = "Item amount must be a number";
                     }
-                    else if (!Item3Value.Text.All("1234567890.".Contains))
-                    {
-                        ItemName3.Content = Item3Value.Text;
-                    }
-                    Item1Value.Text = CalculateCostOfItem(Item1Value.Text).ToString();
-                    Item2Value.Text = CalculateCostOfItem(Item2Value.Text).ToString();
-                    Item3Value.Text = CalculateCostOfItem(Item3Value.Text).ToString();
-                    //calculates end result
-                    OutputValue.Text = "Cost: "+(float.Parse(ScrapCost.Text) / 100f * float.Parse(scrapQuantity.Text) +
-                        float.Parse(copperQuantity.Text) * float.Parse(CopperCost.Text) / 100f +
-                        float.Parse(WiresCost.Text) / 100f * float.Parse(wiresQuantity.Text)+
-                        float.Parse(BatterysCost.Text)/10f *float.Parse(batterysQuantity.Text)+
-                        float.Parse(PlasticCost.Text)/100f *float.Parse(plasticQuantity.Text)+
-                        float.Parse(ElectronicsCost.Text)/10f*float.Parse(electronicsQuantity.Text)+
-                        float.Parse(UraniumCost.Text)/10f*float.Parse(electronicsQuantity.Text)+
-                        float.Parse(Item1Value.Text) * float.Parse(Item1Count.Text) +
-                        float.Parse(Item2Value.Text) * float.Parse(Item2Count.Text) +
-                        float.Parse(Item3Value.Text) * float.Parse(Item3Count.Text)
-                        ).ToString();
                 }
                 else
                 {
