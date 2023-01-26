@@ -7,10 +7,46 @@
         mc:Ignorable="d"
         Title="XOcalculator" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
-        <Canvas x:Name="CalculationMenu" Visibility="Hidden">
+        <Canvas x:Name="CalculationMenu" Visibility="Visible">
+            <Canvas x:Name="CalculationMenuHints" Visibility="Visible">
+                <Label Content="^       ^       ^" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="391" Canvas.Top="196" RenderTransformOrigin="0.5,0.5">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="Items Itemcosts and for crafting" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="361" Canvas.Top="188"/>
+                <Label Content="Crafting price of item" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="180" Canvas.Top="374"/>
+                <Label Content="->" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="220" Canvas.Top="357" RenderTransformOrigin="0.5,0.5">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="270"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label Content="confirm calculation -->" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="295" Canvas.Top="144"/>
+                <Label Content="Search for the item you want" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="360" Canvas.Top="79"/>
+                <Label Content="-->" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="419" Canvas.Top="103" RenderTransformOrigin="0.5,0.5">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+            </Canvas>
 
             <TextBox x:Name ="ItemSearch" MaxLength="20" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="364" Canvas.Top="128"></TextBox>
-            <Button Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Calculate" Canvas.Left="364" Canvas.Top="153"/>
+            <Button Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Calculate" Canvas.Left="432" Canvas.Top="149"/>
             <TextBlock x:Name="OutputValue" Text="" Margin="200,350,0,0" VerticalAlignment="Top"></TextBlock>
             <Button Content="Search" Click="Search" Margin="493,129,255,335"/>
 
@@ -45,7 +81,7 @@
             <Label Content="Electronics Quantity" HorizontalAlignment="Left" Margin="45,270,0,0" VerticalAlignment="Top"/>
             <Label Content="Uranium Quantity" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
         </Canvas>
-        <Canvas x:Name="ResouceMenu" Visibility="Visible">
+        <Canvas x:Name="ResouceMenu" Visibility="Hidden">
             <TextBox MaxLength="10" x:Name = "ScrapCost" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "CopperCost" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "WiresCost" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
@@ -61,6 +97,7 @@
             <Label Content="Electronics cost per 10" HorizontalAlignment="Left" Margin="45,270,0,0" VerticalAlignment="Top"/>
             <Label Content="Uranium cost per 10" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
         </Canvas>
+        <Button x:Name="ShowAndHideHintsButton" Content="hide hints" HorizontalAlignment="Left" Margin="705,0,0,0" VerticalAlignment="Top" Click="ResourceMenuHintsButton"/>
         <Button x:Name="ShowAndHideResourcesButton" Content="hide resources" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Top" Click="ResourceMenuButtonOpen"/>
     </Grid>
 

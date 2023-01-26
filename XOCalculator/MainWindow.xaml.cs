@@ -26,7 +26,19 @@ namespace XOCalculator
         {
             InitializeComponent();//starts UI
         }
-
+        private void ResourceMenuHintsButton(object sender, RoutedEventArgs e)//opens and closes resource menu
+        {
+            if (CalculationMenuHints.Visibility != Visibility.Hidden)
+            {
+                CalculationMenuHints.Visibility = Visibility.Hidden;
+                ShowAndHideHintsButton.Content = "show hints";
+            }
+            else
+            {
+                CalculationMenuHints.Visibility = Visibility.Visible;
+                ShowAndHideHintsButton.Content = "hide hints";
+            }
+        }
         private void ResourceMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
             if (ResouceMenu.Visibility != Visibility.Hidden)
