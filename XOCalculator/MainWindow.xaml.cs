@@ -248,7 +248,7 @@ namespace XOCalculator
             Item3Value.Text = CalculateCostOfItem(Item[12]).ToString();
             ItemName3.Content = Item[12];
             Item3Count.Text = Item[13];
-            float uranium = 0;
+            float uranium;
             float.TryParse(uraniumQuantity.Text, out uranium);
             if (uranium > 0)
             {
