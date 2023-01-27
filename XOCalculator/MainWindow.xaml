@@ -47,7 +47,7 @@
 
             <TextBox x:Name ="ItemSearch" MaxLength="20" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="364" Canvas.Top="128"></TextBox>
             <Button Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Calculate" Canvas.Left="432" Canvas.Top="149"/>
-            <TextBlock x:Name="OutputValue" Text="" Margin="200,350,0,0" VerticalAlignment="Top"></TextBlock>
+            <TextBlock x:Name="OutputValue" Text="Cost: 0" Margin="200,350,0,0" VerticalAlignment="Top"></TextBlock>
             <Button Content="Search" Click="Search" Margin="493,129,255,335"/>
 
 
