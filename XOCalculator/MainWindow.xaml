@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="XOcalculator" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
-        <Canvas x:Name="CalculationMenu" Visibility="Visible">
+        <Canvas x:Name="CalculationMenu" Visibility="Visible" Grid.RowSpan="2">
             <Canvas x:Name="CalculationMenuHints" Visibility="Visible">
                 <Label Content="^       ^       ^" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="391" Canvas.Top="196" RenderTransformOrigin="0.5,0.5">
                     <Label.RenderTransform>
@@ -80,8 +80,16 @@
             <Label Content="Plastic Quantity" HorizontalAlignment="Left" Margin="45,220,0,0" VerticalAlignment="Top"/>
             <Label Content="Electronics Quantity" HorizontalAlignment="Left" Margin="45,270,0,0" VerticalAlignment="Top"/>
             <Label Content="Uranium Quantity" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="RarityCombobox" Canvas.Left="256" Canvas.Top="121" Width="98" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top">
+                <ComboBoxItem Content="Common"/>
+                <ComboBoxItem Content="Rare"/>
+                <ComboBoxItem Content="Special"/>
+                <ComboBoxItem Content="Epic"/>
+                <ComboBoxItem Content="Legendary"/>
+                <ComboBoxItem Content="Relic"/>
+            </ComboBox>
         </Canvas>
-        <Canvas x:Name="ResouceMenu" Visibility="Hidden">
+        <Canvas x:Name="ResouceMenu" Visibility="Hidden" Grid.RowSpan="2">
             <TextBox MaxLength="10" x:Name = "ScrapCost" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "CopperCost" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "WiresCost" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>

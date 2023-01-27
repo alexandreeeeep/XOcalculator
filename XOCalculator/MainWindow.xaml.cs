@@ -25,6 +25,7 @@ namespace XOCalculator
         public MainWindow()
         {
             InitializeComponent();//starts UI
+            RarityCombobox.Text = "Common";
         }
         private void ResourceMenuHintsButton(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
@@ -58,6 +59,7 @@ namespace XOCalculator
         {
             string ItemName = FindValue(ItemSearch.Text.ToLower().ToString());//takes user input and searches for it in algorithm
             string[] Item = SeparateList(ItemName);
+            float CraftingCost = 0;
             //validates if there is an input
             if (scrapQuantity.Text == ""){
                 scrapQuantity.Text = "0";
@@ -119,6 +121,26 @@ namespace XOCalculator
             if (Item3Value.Text == ""){
                 Item3Value.Text = "0";
             }
+            if (RarityCombobox.Text == "Common" || RarityCombobox.Text == "Relic")
+            {
+                CraftingCost = 0;
+            }
+            else if (RarityCombobox.Text == "Rare")
+            {
+                CraftingCost = 3;
+            }
+            else if (RarityCombobox.Text == "Special")
+            {
+                CraftingCost = 6;
+            }
+            else if (RarityCombobox.Text == "Epic")
+            {
+                CraftingCost = 15;
+            }
+            else if (RarityCombobox.Text == "Legendary")
+            {
+                CraftingCost = 75;
+            }
 
             //valdades if there is an incorrect input
             if ((scrapQuantity.Text+copperQuantity.Text+wiresQuantity.Text + batterysQuantity.Text + plasticQuantity.Text + electronicsQuantity.Text + uraniumQuantity.Text).All("1234567890.".Contains))
@@ -155,7 +177,8 @@ namespace XOCalculator
                             float.Parse(UraniumCost.Text) / 10f * float.Parse(electronicsQuantity.Text) +
                             float.Parse(Item1Value.Text) * float.Parse(Item1Count.Text) +
                             float.Parse(Item2Value.Text) * float.Parse(Item2Count.Text) +
-                            float.Parse(Item3Value.Text) * float.Parse(Item3Count.Text)
+                            float.Parse(Item3Value.Text) * float.Parse(Item3Count.Text) +
+                            CraftingCost
                             ).ToString();
                     }
                     else
@@ -197,7 +220,7 @@ namespace XOCalculator
                float.Parse(Item[7]) / 10f * float.Parse(UraniumCost.Text)
                +CalculateCostOfItem(Item[8])*float.Parse(Item[9])+
                CalculateCostOfItem(Item[10]) * float.Parse(Item[11])+
-               CalculateCostOfItem(Item[12]) * float.Parse(Item[13]);
+               CalculateCostOfItem(Item[12]) * float.Parse(Item[13])+ float.Parse(Item[14]);
         }
 
         private void Search(object sender, RoutedEventArgs e)//Runs the calculation
@@ -225,6 +248,32 @@ namespace XOCalculator
             Item3Value.Text = CalculateCostOfItem(Item[12]).ToString();
             ItemName3.Content = Item[12];
             Item3Count.Text = Item[13];
+            float uranium = 0;
+            float.TryParse(uraniumQuantity.Text, out uranium);
+            if (uranium > 0)
+            {
+                RarityCombobox.Text = "Relic";
+            }
+            else if (Item[14] == "0")
+            {
+                RarityCombobox.Text = "Common";
+            }
+            else if (Item[14] == "3")
+            {
+                RarityCombobox.Text = "Rare";
+            }
+            else if (Item[14] == "6")
+            {
+                RarityCombobox.Text = "Special";
+            }
+            else if (Item[14] == "15")
+            {
+                RarityCombobox.Text = "Epic";
+            }
+            else if (Item[14] == "75")
+            {
+                RarityCombobox.Text = "Legendary";
+            }
             //runs the program showing the cost
             if (Item[0] != "Item Not Found")//shows an error message if item is not found
             {
@@ -233,7 +282,7 @@ namespace XOCalculator
         }
         string[] SeparateList(string ItemName)//finds the name in the text file
         {
-            string[] Item = new string[] { "","","","","","","","", "", "", "", "", "", "" };
+            string[] Item = new string[] { "","","","","","","","", "", "", "", "", "", "","" };
             int CountForList = 0;
             for (int i = 0; i < ItemName.Length;i++)
             {//itarates threw each letter
