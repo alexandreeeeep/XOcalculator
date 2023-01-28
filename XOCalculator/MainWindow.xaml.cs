@@ -26,6 +26,29 @@ namespace XOCalculator
         {
             InitializeComponent();//starts UI
             RarityCombobox.Text = "Common";
+
+            var AllItems = new List<string>();
+            string ItemFound;
+            string[] ItemName = File.ReadAllLines("Items.txt");
+            Array.Sort(ItemName);//sorts it into alphabetical order
+            foreach (string line in ItemName)//itarates threw each line
+            {
+                ItemFound = "";
+                foreach (char c in line)
+                {//itarates threw each letter 
+                    if (c != '_')//finds the end of the first word
+                    {
+                        ItemFound += c.ToString();
+                    }
+                    else if(ItemFound != "")
+                    {
+                        AllItems.Add(ItemFound);
+                        break;
+                    }
+                }
+            }
+            ItemSearch.FilterMode = AutoCompleteFilterMode.Contains;
+            ItemSearch.ItemsSource = AllItems;
         }
         private void ResourceMenuHintsButton(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
@@ -196,7 +219,7 @@ namespace XOCalculator
                 OutputValue.Text = "Resource Quantity must be a number";
             }
         }
-        float CalculateCostOfItem(string ItemName)//calculates cost of item
+        private float CalculateCostOfItem(string ItemName)//calculates cost of item
         {
             if(ItemName == "Empty" || ItemName =="") {
                 return 0f;
