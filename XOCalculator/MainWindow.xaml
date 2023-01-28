@@ -8,7 +8,7 @@
         Title="XOcalculator" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
         <Canvas x:Name="CalculationMenu" Visibility="Hidden" Grid.RowSpan="2">
-            <Canvas x:Name="CalculationMenuHints" Visibility="Visible">
+            <Canvas x:Name="CalculationMenuHints" Visibility="Hidden">
                 <Label Content="^       ^       ^" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="391" Canvas.Top="196" RenderTransformOrigin="0.5,0.5">
                     <Label.RenderTransform>
                         <TransformGroup>
@@ -71,7 +71,6 @@
             <TextBox x:Name="Item2Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="300" MaxLength="10"></TextBox>
             <TextBox x:Name="Item3Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="300" MaxLength="10"></TextBox>
 
-
             <TextBox x:Name ="scrapQuantity" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
             <TextBox x:Name ="copperQuantity" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
             <TextBox x:Name ="wiresQuantity" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" MaxLength="10"></TextBox>
@@ -112,7 +111,7 @@
             <Label Content="Electronics cost per 10" HorizontalAlignment="Left" Margin="45,270,0,0" VerticalAlignment="Top"/>
             <Label Content="Uranium cost per 10" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
         </Canvas>
-        <Button x:Name="ShowAndHideHintsButton" Content="hide hints" HorizontalAlignment="Left" Margin="705,0,0,0" VerticalAlignment="Top" Click="ResourceMenuHintsButton"/>
+        <Button x:Name="ShowAndHideHintsButton" Content="show hints" HorizontalAlignment="Left" Margin="705,0,0,0" VerticalAlignment="Top" Click="ResourceMenuHintsButton"/>
         <Button x:Name="ShowAndHideResourcesButton" Content="hide resources" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Top" Click="ResourceMenuButtonOpen"/>
     </Grid>
 
