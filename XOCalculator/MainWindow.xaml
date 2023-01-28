@@ -44,8 +44,8 @@
                     </Label.RenderTransform>
                 </Label>
             </Canvas>
-            <StackPanel Orientation="Horizontal" Canvas.Left="364" Canvas.Top="125">
-                <controls:AutoCompleteBox x:Name="ItemSearch" Width="121"/>
+            <StackPanel Orientation="Horizontal" Canvas.Left="350" Canvas.Top="125" Width="140">
+                <controls:AutoCompleteBox x:Name="ItemSearch" Width="140"/>
             </StackPanel>
             <Button Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Calculate" Canvas.Left="432" Canvas.Top="149"/>
             <TextBlock x:Name="OutputValue" Text="Cost: 0" Margin="200,350,0,0" VerticalAlignment="Top"></TextBlock>
@@ -81,7 +81,7 @@
             <Label Content="Plastic Quantity" HorizontalAlignment="Left" Margin="45,220,0,0" VerticalAlignment="Top"/>
             <Label Content="Electronics Quantity" HorizontalAlignment="Left" Margin="45,270,0,0" VerticalAlignment="Top"/>
             <Label Content="Uranium Quantity" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="RarityCombobox" Canvas.Left="256" Canvas.Top="121" Width="98" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top">
+            <ComboBox x:Name="RarityCombobox" Canvas.Left="251" Canvas.Top="121" Width="98" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top">
                 <ComboBoxItem Content="Common"/>
                 <ComboBoxItem Content="Rare"/>
                 <ComboBoxItem Content="Special"/>
