@@ -47,6 +47,7 @@ namespace XOCalculator
                     }
                 }
             }
+            //makes text boxes have a auto complete
             ItemSearch.FilterMode = AutoCompleteFilterMode.Contains;
             ItemSearch.ItemsSource = AllItems;
             Item1Value.FilterMode= AutoCompleteFilterMode.Contains;
@@ -55,6 +56,19 @@ namespace XOCalculator
             Item2Value.ItemsSource = AllItems;
             Item3Value.FilterMode = AutoCompleteFilterMode.Contains;
             Item3Value.ItemsSource = AllItems;
+
+            //takes values from save file
+            string[] MaterialCosts = File.ReadAllLines("Savefile.txt");
+            ScrapCost.Text = MaterialCosts[0];
+            CopperCost.Text = MaterialCosts[1];
+            WiresCost.Text = MaterialCosts[2];
+            PlasticCost.Text = MaterialCosts[3];
+            BatterysCost.Text = MaterialCosts[4];
+            ElectronicsCost.Text = MaterialCosts[5];
+            UraniumCost.Text = MaterialCosts[6];
+
+
+
         }
         private void ResourceMenuHintsButton(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
@@ -171,6 +185,8 @@ namespace XOCalculator
                 CraftingCost = 75;
             }
 
+            string[] lines ={ScrapCost.Text.ToString(), CopperCost.Text.ToString(),WiresCost.Text.ToString(), PlasticCost.Text.ToString(), BatterysCost.Text.ToString(), ElectronicsCost.Text.ToString() ,UraniumCost.Text.ToString()};
+            File.WriteAllLines("Savefile.txt", lines);
             //valdades if there is an incorrect input
             if ((scrapQuantity.Text+copperQuantity.Text+wiresQuantity.Text + batterysQuantity.Text + plasticQuantity.Text + electronicsQuantity.Text + uraniumQuantity.Text).All("1234567890.".Contains))
             {
@@ -203,7 +219,7 @@ namespace XOCalculator
                             float.Parse(BatterysCost.Text) / 10f * float.Parse(batterysQuantity.Text) +
                             float.Parse(PlasticCost.Text) / 100f * float.Parse(plasticQuantity.Text) +
                             float.Parse(ElectronicsCost.Text) / 10f * float.Parse(electronicsQuantity.Text) +
-                            float.Parse(UraniumCost.Text) / 10f * float.Parse(electronicsQuantity.Text) +
+                            float.Parse(UraniumCost.Text) / 10f * float.Parse(uraniumQuantity.Text) +
                             float.Parse(Item1Value.Text) * float.Parse(Item1Count.Text) +
                             float.Parse(Item2Value.Text) * float.Parse(Item2Count.Text) +
                             float.Parse(Item3Value.Text) * float.Parse(Item3Count.Text) +
@@ -235,7 +251,7 @@ namespace XOCalculator
                 return Result;
             }
             string[] Item = SeparateList(FindValue(ItemName));//finds the item and creates list
-            if (Item[0] == "Item Not Found")
+            if (Item[0] == "Item Not Found (make sure the item is spelt correctly and is craftable)")
             {
                 return 0f;
             }
@@ -304,7 +320,7 @@ namespace XOCalculator
                 RarityCombobox.Text = "Legendary";
             }
             //runs the program showing the cost
-            if (Item[0] != "Item Not Found")//shows an error message if item is not found
+            if (Item[0] != "Item Not Found (make sure the item is spelt correctly and is craftable)")//shows an error message if item is not found
             {
                 Calculate(sender, e);
             }
@@ -349,7 +365,7 @@ namespace XOCalculator
                     else { break;}
                 }
             }
-            return "Item Not Found";//returns if item not found
+            return "Item Not Found (make sure the item is spelt correctly and is craftable)";//returns if item not found
         }
     }
 }
