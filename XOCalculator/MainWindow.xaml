@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="XOcalculator" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
-        <Canvas x:Name="CalculationMenu" Visibility="Visible" Grid.RowSpan="2">
+        <Canvas x:Name="CalculationMenu" Visibility="Hidden" Grid.RowSpan="2">
             <Canvas x:Name="CalculationMenuHints" Visibility="Visible">
                 <Label Content="^       ^       ^" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="391" Canvas.Top="196" RenderTransformOrigin="0.5,0.5">
                     <Label.RenderTransform>
@@ -19,7 +19,7 @@
                         </TransformGroup>
                     </Label.RenderTransform>
                 </Label>
-                <Label Content="Items Itemcosts and for crafting" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="361" Canvas.Top="188"/>
+                <Label Content="Items Itemcosts and for crafting (items crafted in pairs count as 1 item)" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="241" Canvas.Top="183"/>
                 <Label Content="Crafting price of item" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="180" Canvas.Top="374"/>
                 <Label Content="->" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="220" Canvas.Top="357" RenderTransformOrigin="0.5,0.5">
                     <Label.RenderTransform>
@@ -58,9 +58,15 @@
             <Label Content="Item 2 amount" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="400" Canvas.Top="270"/>
             <Label x:Name="ItemName3" Content="Item 3 Cost" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="568" Canvas.Top="219"/>
             <Label Content="Item 3 amount" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="546" Canvas.Top="270"/>
-            <TextBox x:Name="Item1Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="250" MaxLength="20" ></TextBox>
-            <TextBox x:Name="Item2Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="250" MaxLength="20"></TextBox>
-            <TextBox x:Name="Item3Value" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="250" MaxLength="20"></TextBox>
+            <StackPanel Orientation="Horizontal" Canvas.Left="230" Canvas.Top="250" Width="140">
+                <controls:AutoCompleteBox x:Name="Item1Value" Width="140"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Canvas.Left="375" Canvas.Top="250" Width="140">
+                <controls:AutoCompleteBox x:Name="Item2Value" Width="140"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Canvas.Left="520" Canvas.Top="250" Width="140">
+                <controls:AutoCompleteBox x:Name="Item3Value" Width="140"/>
+            </StackPanel>
             <TextBox x:Name="Item1Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="240" Canvas.Top="300" MaxLength="10"></TextBox>
             <TextBox x:Name="Item2Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="385" Canvas.Top="300" MaxLength="10"></TextBox>
             <TextBox x:Name="Item3Count" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="530" Canvas.Top="300" MaxLength="10"></TextBox>
@@ -90,7 +96,7 @@
                 <ComboBoxItem Content="Relic"/>
             </ComboBox>
         </Canvas>
-        <Canvas x:Name="ResouceMenu" Visibility="Hidden" Grid.RowSpan="2">
+        <Canvas x:Name="ResouceMenu" Visibility="Visible" Grid.RowSpan="2">
             <TextBox MaxLength="10" x:Name = "ScrapCost" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "CopperCost" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "WiresCost" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>

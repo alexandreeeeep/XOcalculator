@@ -49,6 +49,12 @@ namespace XOCalculator
             }
             ItemSearch.FilterMode = AutoCompleteFilterMode.Contains;
             ItemSearch.ItemsSource = AllItems;
+            Item1Value.FilterMode= AutoCompleteFilterMode.Contains;
+            Item1Value.ItemsSource = AllItems;
+            Item2Value.FilterMode = AutoCompleteFilterMode.Contains;
+            Item2Value.ItemsSource = AllItems;
+            Item3Value.FilterMode = AutoCompleteFilterMode.Contains;
+            Item3Value.ItemsSource = AllItems;
         }
         private void ResourceMenuHintsButton(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
@@ -272,8 +278,7 @@ namespace XOCalculator
             ItemName3.Content = Item[12];
             Item3Count.Text = Item[13];
             //Selecta the correct rairty 
-            float uranium;
-            float.TryParse(uraniumQuantity.Text, out uranium);
+            float.TryParse(uraniumQuantity.Text, out float uranium);
             if (uranium > 0)
             {
                 RarityCombobox.Text = "Relic";
