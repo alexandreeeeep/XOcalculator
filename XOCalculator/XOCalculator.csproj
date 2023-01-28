@@ -54,7 +54,7 @@
     </Win32Resource>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>OXicon.ico</ApplicationIcon>
+    <ApplicationIcon>OXIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetProjects.Input.Toolkit, Version=6.1.94.0, Culture=neutral, PublicKeyToken=79778c5f2eed289b, processorArchitecture=MSIL">
@@ -139,10 +139,7 @@
     <Resource Include="bin\Debug\Savefile.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="XOIcon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="OXicon.ico" />
+    <Resource Include="OXIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
