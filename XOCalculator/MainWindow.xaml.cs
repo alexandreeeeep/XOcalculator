@@ -17,46 +17,52 @@ using System.Windows.Shapes;
 
 namespace XOCalculator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+        public MainWindow()//main window
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             InitializeComponent();//starts UI
+            if (!File.Exists("Savefile.txt"))
+            {
+                string[] emptyFile = new string[] {"0", "0", "0", "0", "0", "0", "0" };
+                File.WriteAllLines("Savefile.txt",emptyFile);
+            }
             RarityCombobox.Text = "Common";
 
-            var AllItems = new List<string>();
-            string ItemFound;
-            string[] ItemName = File.ReadAllLines("Items.txt");
-            Array.Sort(ItemName);//sorts it into alphabetical order
-            foreach (string line in ItemName)//itarates threw each line
+            if (File.Exists("Items.txt"))//allows to check if items are missing
             {
-                ItemFound = "";
-                foreach (char c in line)
-                {//itarates threw each letter 
-                    if (c != '_')//finds the end of the first word
-                    {
-                        ItemFound += c.ToString();
-                    }
-                    else if(ItemFound != "")
-                    {
-                        AllItems.Add(ItemFound);
-                        break;
+                var AllItems = new List<string>();
+                string ItemFound;
+                string[] ItemName = File.ReadAllLines("Items.txt");
+                Array.Sort(ItemName);//sorts it into alphabetical order
+                foreach (string line in ItemName)//itarates threw each line
+                {
+                    ItemFound = "";
+                    foreach (char c in line)
+                    {//itarates threw each letter 
+                        if (c != '_')//finds the end of the first word
+                        {
+                            ItemFound += c.ToString();
+                        }
+                        else if (ItemFound != "")
+                        {
+                            AllItems.Add(ItemFound);
+                            break;
+                        }
                     }
                 }
+                //makes text boxes have a auto complete
+                ItemSearch.FilterMode = AutoCompleteFilterMode.Contains;
+                ItemSearch.ItemsSource = AllItems;
+                Item1Value.FilterMode = AutoCompleteFilterMode.Contains;
+                Item1Value.ItemsSource = AllItems;
+                Item2Value.FilterMode = AutoCompleteFilterMode.Contains;
+                Item2Value.ItemsSource = AllItems;
+                Item3Value.FilterMode = AutoCompleteFilterMode.Contains;
+                Item3Value.ItemsSource = AllItems;
             }
-            //makes text boxes have a auto complete
-            ItemSearch.FilterMode = AutoCompleteFilterMode.Contains;
-            ItemSearch.ItemsSource = AllItems;
-            Item1Value.FilterMode= AutoCompleteFilterMode.Contains;
-            Item1Value.ItemsSource = AllItems;
-            Item2Value.FilterMode = AutoCompleteFilterMode.Contains;
-            Item2Value.ItemsSource = AllItems;
-            Item3Value.FilterMode = AutoCompleteFilterMode.Contains;
-            Item3Value.ItemsSource = AllItems;
-
             //takes values from save file
             string[] MaterialCosts = File.ReadAllLines("Savefile.txt");
             ScrapCost.Text = MaterialCosts[0];
