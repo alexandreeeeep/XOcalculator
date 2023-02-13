@@ -263,16 +263,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bin\Debug\Items.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="XOIcon %281%29.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="bin\Debug\Savefile.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="obj\Release\Items.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="obj\Release\Savefile.txt" />

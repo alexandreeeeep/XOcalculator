@@ -99,8 +99,7 @@ namespace XOCalculator
                 CalculationMenuHints.Visibility = Visibility.Visible;
                 ShowAndHideHintsButton.Content = "hide hints";
             }
-        }
-        private void ResourceMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
+        }        private void ResourceMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
             if (ResouceMenu.Visibility != Visibility.Hidden)
             {
@@ -408,7 +407,7 @@ namespace XOCalculator
 "decor container_400_0_0_0_0_0_0_Empty_0_Empty_0_Empty_0_0",
 "engineer flag_300_150_0_0_0_0_0_Empty_0_Empty_0_Empty_0_0",
 "paint container_400_400_0_300_0_300_0_Empty_0_Empty_0_Empty_0_0",
-"",
+
 "growl_700_130_0_0_0_0_0_sprinter_1_lupara_1_Empty_0_3",
 "wyvern_700_130_0_0_0_0_0_huntsman_1_rs-1 ruby_1_Empty_0_3",
 "trucker_700_130_0_0_0_0_0_docker_1_sprinter_1_Empty_0_3",
@@ -443,7 +442,7 @@ namespace XOCalculator
 "landing gear st_600_130_0_0_0_0_0_medium wheel st_1_small wheel st_1_Empty_0_3",
 "large wheel_600_130_0_0_0_0_0_small wheel_1_wwt1_1_Empty_0_3",
 "large wheel st_600_130_0_0_0_0_0_medium wheel st_1_wwt1_1_Empty_0_3",
-"",
+
 "bat_50_100_100_0_50_0_0_growl_1_big g_1_Empty_0_6",
 "pilgrim_50_100_100_0_50_0_0_wyvern_1_ad-12 falcon_1_Empty_0_6",
 "jawbreaker_50_100_100_0_50_0_0_trucker_1_rd-1 listener_1_Empty_0_6",
@@ -486,7 +485,8 @@ namespace XOCalculator
 "apc wheel st_50_100_100_0_50_0_0_large wheel st_1_balloon tyre st_1_Empty_0_6",
 "twin wheel_50_100_100_0_50_0_0_large wheel_1_balloon tyre_1_Empty_0_6",
 "twin wheel st_50_100_100_0_50_0_0_large wheel st_1_balloon tyre st_1_Empty_0_6",
-"",
+
+"huginn_450_450_200_0_100_0_0_pyralid_1_razorback_1_oculus vi_1_15",
 "jannabi_250_250_200_100_60_0_0_bat_1_tempura_1_razorback_1_15",
 "werewolf_100_150_200_0_100_0_0_bat_1_shiv st_1_ampere_1_15",
 "harpy_100_150_200_0_100_0_0_bat_1_shiv_1_sinus-0_1_15",
@@ -496,6 +496,7 @@ namespace XOCalculator
 "omnibox_100_150_200_0_100_0_0_pilgrim_1_array st_1_jawbreaker_1_15",
 "humpback_100_150_200_0_100_0_0_jawbreaker_1_apc wheel_1_razorback_1_15",
 "bastion_100_150_200_0_100_0_0_jawbreaker_1_apc wheel st_1_pu-1 charge_1 _15",
+"gungnir_450_450_200_0_100_0_0_ac62 therm_1_sinus-0_1_m-37 piercer_1_15",
 "m-29 protector_100_150_200_0_100_0_0_sinus-0_1_dun horse_1_chameleon_1_15",
 "m-38 fidget_600_600_200_0_100_0_0_m-37 piercer_1_ac50 storm_1_razorback_1_15",
 "spectre-2_100_150_200_0_100_0_0_sinus-0_1_ad-13 hawk_1_maxwell_1_15",
@@ -558,17 +559,20 @@ namespace XOCalculator
 "small track_100_150_200_0_100_0_0_hardcore_1_buzzsaw_1_mace_1_15",
 "hardened track_100_150_200_0_100_0_0_ampere_1_chameleon_1_dun horse_1_15",
 "armored track_100_150_200_0_100_0_0_twin wheel_1_twin wheel st_1_razorback_1_15",
+"sleipnir_450_450_200_0_100_0_0_m-25 guardian_1_ampere_1_buzzsaw_1_15",
 "icarus vii_100_150_200_0_100_0_0_lunar iv st_1_lunar iv_1_dun horse_1_15",
 "ml 200_100_150_200_0_100_0_0_sidekick_1_apc wheel_1_razorback_1_15",
 "bigram_100_150_200_0_100_0_0_array_1_array st_1_apc wheel_1_15",
 "meat grinder_100_150_200_0_100_0_0_shiv_1_shiv st_1_buzzsaw_1_15",
-"",
+
+"muninn_0_750_600_750_0_600_0_huginn_2_hermit st_2_mg13 equalizer_1_75",
 "griffon_100_750_0_750_0_750_0_harpy_2_rupture_2_neutrino_1_75",
 "beholder_100_750_0_750_0_750_0_chameleon mk2_2_hermit_2_nest_1_75",
 "nova_100_750_0_750_0_750_0_photon_2_whirl_2_mauler_1_75",
 "yokozuna_100_750_0_750_0_750_0_jannabi_2_enlightenment_2_yaoguai_1_75",
 "cohort_100_750_0_750_0_750_0_humpback_2_gravastar_2_md-3 owl_1_75",
 "m-39 imp_1350_1350_0_800_0_800_0_m-38 fidget_2_colossus_2_bigfoot_1_75",
+"nothung_0_750_600_750_0_600_0_gungnir_2_omni_1_mg13 equalizer_1_75",
 "aspect_100_750_0_750_0_750_0_spectre-2_2_small track_2_rd-2 keen_1_75",
 "mg14 arbiter_100_750_0_750_0_750_0_mg13 equalizer_2_rt anaconda_2_gasgen_1_75",
 "reaper_100_750_0_750_0_750_0_ac72 whirlwind_2_hot red_2_armored track_1_75",
@@ -592,7 +596,9 @@ namespace XOCalculator
 "kaiju_100_750_0_750_0_750_0_enlightenment_2_yaoguai_2_jannabi_1_75",
 "aegis-prime_100_750_0_750_0_750_0_barrier ix_2_chameleon mk2_2_meat grinder_1_75",
 "apollo iv_100_750_0_750_0_750_0_quantum_2_bigfoot st_2_gasgen_1_75",
-"",
+"thor-6s_0_750_600_750_0_600_0_sleipnir_2_ka-2 flywheel_2_gasgen_1_75",
+
+
 "punisher_0_1000_0_1000_0_1000_600_aspect_1_cyclone_1_Empty_0_75",
 "jormungandr_0_1000_0_1000_0_1000_600_nidhogg_1_helios_1_Empty_0_75",
 "breaker_0_1000_0_1000_0_1000_600_hammerfall_1_fortune_1_Empty_0_75",
