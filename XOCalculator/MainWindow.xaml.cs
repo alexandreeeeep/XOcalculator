@@ -104,17 +104,42 @@ namespace XOCalculator
             if (ResouceMenu.Visibility != Visibility.Hidden)
             {
                 ResouceMenu.Visibility = Visibility.Hidden;//hides resource menu
-                ShowAndHideResourcesButton.Content = "show resources";
+                ShowAndHideResourcesButton.Content = "Resources";
                 CalculationMenu.Visibility = Visibility.Visible;
-            }
+				BuildMenu.Visibility = Visibility.Hidden;
+				ShowBuildMenubuttion.Content = "Build";
+			}
             else
             {
                 ResouceMenu.Visibility = Visibility.Visible;//unhides resource menu
                 CalculationMenu.Visibility = Visibility.Hidden;
-                ShowAndHideResourcesButton.Content = "hide resources";
-            }
-        }
-        private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation for the Item
+                ShowAndHideResourcesButton.Content = "Crafting";
+				BuildMenu.Visibility = Visibility.Hidden;
+				ShowBuildMenubuttion.Content = "Build";
+			}
+
+		}
+		private void BuildMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
+		{
+			if (BuildMenu.Visibility != Visibility.Hidden)
+			{
+				ResouceMenu.Visibility = Visibility.Hidden;//hides resource menu
+				ShowAndHideResourcesButton.Content = "Resources";
+				CalculationMenu.Visibility = Visibility.Visible;
+                BuildMenu.Visibility = Visibility.Hidden;
+                ShowBuildMenubuttion.Content = "Build";
+			}
+			else
+			{
+				ShowBuildMenubuttion.Content = "Crafting";
+				BuildMenu.Visibility= Visibility.Visible;
+				ResouceMenu.Visibility = Visibility.Hidden;//unhides resource menu
+				CalculationMenu.Visibility = Visibility.Hidden;
+				ShowAndHideResourcesButton.Content = "Resources";
+			}
+
+		}
+		private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation for the Item
         {
             string ItemName = FindValue(ItemSearch.Text.ToLower().ToString());//takes user input and searches for it in algorithm
             string[] Item = SeparateList(ItemName);

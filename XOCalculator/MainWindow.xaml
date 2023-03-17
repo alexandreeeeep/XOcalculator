@@ -6,7 +6,8 @@
         xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
         Title="XOcalculator" Height="500" Width="800" ResizeMode="NoResize">
     <Grid>
-        <Canvas x:Name="CalculationMenu" Visibility="Hidden" Grid.RowSpan="2">
+        <Canvas
+            x:Name="CalculationMenu" Visibility="Hidden" Grid.RowSpan="2">
             <Canvas x:Name="CalculationMenuHints" Visibility="Hidden">
                 <Label Content="^       ^       ^" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="391" Canvas.Top="196" RenderTransformOrigin="0.5,0.5">
                     <Label.RenderTransform>
@@ -110,8 +111,11 @@
             <Label Content="Electronics cost per 10" HorizontalAlignment="Left" Margin="45,270,0,0" VerticalAlignment="Top"/>
             <Label Content="Uranium cost per 10" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
         </Canvas>
+        <Canvas x:Name="BuildMenu" Visibility="Hidden">
+        </Canvas>
         <Button x:Name="ShowAndHideHintsButton" Content="show hints" HorizontalAlignment="Left" Margin="705,0,0,0" VerticalAlignment="Top" Click="ResourceMenuHintsButton"/>
-        <Button x:Name="ShowAndHideResourcesButton" Content="hide resources" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Top" Click="ResourceMenuButtonOpen"/>
+        <Button x:Name="ShowAndHideResourcesButton" Content="Resources" HorizontalAlignment="Right" Margin="0,0,700,0" VerticalAlignment="Top" Click="ResourceMenuButtonOpen"/>
+        <Button x:Name="ShowBuildMenubuttion" Content="Build" HorizontalAlignment="Left" Margin="95,0,0,0" VerticalAlignment="Top" Click="BuildMenuButtonOpen"/>
     </Grid>
 
 
