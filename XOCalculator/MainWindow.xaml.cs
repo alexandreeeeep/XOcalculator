@@ -83,7 +83,7 @@ namespace XOCalculator
             BatterysCost.Text = MaterialCosts[4];
             ElectronicsCost.Text = MaterialCosts[5];
             UraniumCost.Text = MaterialCosts[6];
-            BuildMenuButtonOpen(null,null);
+            BuildMenuButtonOpen(null,null);//
 
 
 
