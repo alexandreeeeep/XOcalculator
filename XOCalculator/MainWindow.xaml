@@ -95,7 +95,7 @@
                 <ComboBoxItem Content="Relic"/>
             </ComboBox>
         </Canvas>
-        <Canvas x:Name="ResouceMenu" Visibility="Visible" Grid.RowSpan="2">
+        <Canvas x:Name="ResouceMenu" Visibility="Hidden" Grid.RowSpan="2">
             <TextBox MaxLength="10" x:Name = "ScrapCost" HorizontalAlignment="Left" Margin="45,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "CopperCost" HorizontalAlignment="Left" Margin="45,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
             <TextBox MaxLength="10" x:Name = "WiresCost" HorizontalAlignment="Left" Margin="45,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"></TextBox>
@@ -112,6 +112,7 @@
             <Label Content="Uranium cost per 10" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
         </Canvas>
         <Canvas x:Name="BuildMenu" Visibility="Hidden">
+            
         </Canvas>
         <Button x:Name="ShowAndHideHintsButton" Content="show hints" HorizontalAlignment="Left" Margin="705,0,0,0" VerticalAlignment="Top" Click="ResourceMenuHintsButton"/>
         <Button x:Name="ShowAndHideResourcesButton" Content="Resources" HorizontalAlignment="Right" Margin="0,0,700,0" VerticalAlignment="Top" Click="ResourceMenuButtonOpen"/>
