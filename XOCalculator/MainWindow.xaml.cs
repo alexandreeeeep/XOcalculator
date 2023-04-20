@@ -21,6 +21,7 @@ using System.Windows.Media.Media3D;
 using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace XOCalculator
 {
@@ -28,7 +29,6 @@ namespace XOCalculator
     {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public MainWindow()//main window
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             InitializeComponent();//starts UI
             if (!File.Exists("Savefile.txt"))
@@ -64,7 +64,7 @@ namespace XOCalculator
                         }
                     }
                 }
-                //makes text boxes have a auto complete
+                //give text boxes have a auto complete
                 ItemSearch.FilterMode = AutoCompleteFilterMode.Contains;
                 ItemSearch.ItemsSource = AllItems;
                 Item1Value.FilterMode = AutoCompleteFilterMode.Contains;
@@ -73,7 +73,19 @@ namespace XOCalculator
                 Item2Value.ItemsSource = AllItems;
                 Item3Value.FilterMode = AutoCompleteFilterMode.Contains;
                 Item3Value.ItemsSource = AllItems;
-            }
+                BuildItem1.FilterMode = AutoCompleteFilterMode.Contains;
+                BuildItem1.ItemsSource = AllItems;
+				BuildItem2.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem2.ItemsSource = AllItems;
+				BuildItem3.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem3.ItemsSource = AllItems;
+				BuildItem4.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem4.ItemsSource = AllItems;
+				BuildItem5.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem5.ItemsSource = AllItems;
+				BuildItem6.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem6.ItemsSource = AllItems;
+			}
             //takes values from save file
             string[] MaterialCosts = File.ReadAllLines("Savefile.txt");
             ScrapCost.Text = MaterialCosts[0];
@@ -83,10 +95,64 @@ namespace XOCalculator
             BatterysCost.Text = MaterialCosts[4];
             ElectronicsCost.Text = MaterialCosts[5];
             UraniumCost.Text = MaterialCosts[6];
-            BuildMenuButtonOpen(null,null);//
+            BuildMenuButtonOpen(null,null);
+		}
 
-
-
+        private void ShowCost(object sender, RoutedEventArgs e)
+        {
+            string senderStr = ((Button)sender).Name;
+			int SenderNumber = int.Parse(senderStr[senderStr.Length - 1].ToString());
+            switch (SenderNumber)
+            {
+                case 1:
+                    Cost1.Text = CalculateCostOfItem(BuildItem1.Text).ToString();
+                    if (Count1.Text == "")
+                    {
+                        Count1.Text = "1";
+                    }
+                    Total1.Text = (float.Parse(Cost1.Text)*float.Parse(Count1.Text)).ToString();
+                    break;
+				case 2:
+					Cost2.Text = CalculateCostOfItem(BuildItem2.Text).ToString();
+					if (Count2.Text == "")
+					{
+						Count2.Text = "1";
+					}
+					Total2.Text = (float.Parse(Cost2.Text) * float.Parse(Count2.Text)).ToString();
+					break;
+				case 3:
+					Cost3.Text = CalculateCostOfItem(BuildItem3.Text).ToString();
+					if (Count3.Text == "")
+					{
+						Count3.Text = "1";
+					}
+					Total3.Text = (float.Parse(Cost3.Text) * float.Parse(Count3.Text)).ToString();
+					break;
+				case 4:
+					Cost4.Text = CalculateCostOfItem(BuildItem4.Text).ToString();
+					if (Count4.Text == "")
+					{
+						Count4.Text = "1";
+					}
+					Total4.Text = (float.Parse(Cost4.Text) * float.Parse(Count4.Text)).ToString();
+					break;
+				case 5:
+					Cost5.Text = CalculateCostOfItem(BuildItem5.Text).ToString();
+					if (Count5.Text == "")
+					{
+						Count5.Text = "1";
+					}
+					Total5.Text = (float.Parse(Cost5.Text) * float.Parse(Count5.Text)).ToString();
+					break;
+				case 6:
+					Cost6.Text = CalculateCostOfItem(BuildItem6.Text).ToString();
+					if (Count6.Text == "")
+					{
+						Count6.Text = "1";
+					}
+					Total6.Text = (float.Parse(Cost6.Text) * float.Parse(Count6.Text)).ToString();
+					break;
+			}
 		}
         private void ResourceMenuHintsButton(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
@@ -409,6 +475,7 @@ namespace XOCalculator
             }
             return "Item Not Found (make sure the item is spelt correctly and is craftable)";//returns if item not found
         }
+
         void CreateDatabase()
         {
             string[] data = {  
@@ -634,7 +701,7 @@ namespace XOCalculator
 "firebug_0_1000_0_1000_0_1000_600_zs-46 mammoth_1_harvester_1_Empty_0_75",
 "porcupine_0_1000_0_1000_0_1000_600_retcher_1_hurricane_1_Empty_0_75",
 "ripper_0_1000_0_1000_0_1000_600_fortune_1_mg14 arbiter_1_Empty_0_75",
-"scorpion_0_1000_0_1000_0_1000_600_pulsar_1_reaper_1_Empty_0_75",
+"scorpion_0_1000_0_1000_0_1000_600_pulsar_1_reaper_1_Empty_0_75"
             };
             File.WriteAllLines("Items.txt", data);
         }

@@ -111,8 +111,56 @@
             <Label Content="Electronics cost per 10" HorizontalAlignment="Left" Margin="45,270,0,0" VerticalAlignment="Top"/>
             <Label Content="Uranium cost per 10" HorizontalAlignment="Left" Margin="45,320,0,0" VerticalAlignment="Top"/>
         </Canvas>
-        <Canvas x:Name="BuildMenu" Visibility="Hidden">
-            
+        <Canvas x:Name="BuildMenu" Visibility="Visible">
+
+            <Canvas >
+                <TextBlock  Text="Cost per item" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="204" Canvas.Top="6"/>
+                <TextBlock  Text="Quantity" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="304" Canvas.Top="6"/>
+                <TextBlock  Text="Total cost" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="504" Canvas.Top="6"/>
+                <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="32" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <controls:AutoCompleteBox x:Name="BuildItem1" Width="130" Height="20"/>
+                </StackPanel>
+                <Button x:Name="Confirm1" Content="Confirm" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="380" Canvas.Top="32"/>
+                <TextBlock x:Name="Cost1" Text="0" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="204" Canvas.Top="32"/>
+                <TextBox x:Name="Count1" Canvas.Left="305" Canvas.Top="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <TextBlock x:Name="Total1" Text="0" Canvas.Left="505" Canvas.Top="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="62" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                     <controls:AutoCompleteBox x:Name="BuildItem2" Width="130" Height="20"/>
+                </StackPanel>
+                <Button x:Name="Confirm2" Content="Confirm" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="380" Canvas.Top="62"/>
+                <TextBlock x:Name="Cost2" Text="0" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="204" Canvas.Top="62"/>
+                <TextBox x:Name="Count2" Canvas.Left="305" Canvas.Top="64" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <TextBlock x:Name="Total2" Text="0" Canvas.Left="505" Canvas.Top="64" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="92" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <controls:AutoCompleteBox x:Name="BuildItem3" Width="130" Height="20"/>
+                </StackPanel>
+                <Button x:Name="Confirm3" Content="Confirm" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="380" Canvas.Top="92"/>
+                <TextBlock x:Name="Cost3" Text="0" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="204" Canvas.Top="92"/>
+                <TextBox x:Name="Count3" Canvas.Left="305" Canvas.Top="94" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <TextBlock x:Name="Total3" Text="0" Canvas.Left="505" Canvas.Top="94" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="122" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <controls:AutoCompleteBox x:Name="BuildItem4" Width="130" Height="20"/>
+                </StackPanel>
+                <Button x:Name="Confirm4" Content="Confirm" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="380" Canvas.Top="122"/>
+                <TextBlock x:Name="Cost4" Text="0" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="204" Canvas.Top="122"/>
+                <TextBox x:Name="Count4" Canvas.Left="305" Canvas.Top="124" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <TextBlock x:Name="Total4" Text="0" Canvas.Left="505" Canvas.Top="124" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="152" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <controls:AutoCompleteBox x:Name="BuildItem5" Width="130" Height="20"/>
+                </StackPanel>
+                <Button x:Name="Confirm5" Content="Confirm" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="380" Canvas.Top="152"/>
+                <TextBlock x:Name="Cost5" Text="0" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="204" Canvas.Top="152"/>
+                <TextBox x:Name="Count5" Canvas.Left="305" Canvas.Top="154" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <TextBlock x:Name="Total5" Text="0" Canvas.Left="505" Canvas.Top="154" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="182" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <controls:AutoCompleteBox x:Name="BuildItem6" Width="130" Height="20"/>
+                </StackPanel>
+                <Button x:Name="Confirm6" Content="Confirm" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="380" Canvas.Top="182"/>
+                <TextBlock x:Name="Cost6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="204" Canvas.Top="182"/>
+                <TextBox x:Name="Count6" Canvas.Left="305" Canvas.Top="184" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <TextBlock x:Name="Total6" Text="0" Canvas.Left="505" Canvas.Top="184" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+
+            </Canvas>
         </Canvas>
         <Button x:Name="ShowAndHideHintsButton" Content="show hints" HorizontalAlignment="Left" Margin="705,0,0,0" VerticalAlignment="Top" Click="ResourceMenuHintsButton"/>
         <Button x:Name="ShowAndHideResourcesButton" Content="Resources" HorizontalAlignment="Right" Margin="0,0,700,0" VerticalAlignment="Top" Click="ResourceMenuButtonOpen"/>
