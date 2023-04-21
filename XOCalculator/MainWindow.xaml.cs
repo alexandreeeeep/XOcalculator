@@ -178,6 +178,17 @@ namespace XOCalculator
 					Row7.Visibility = Visibility.Hidden;
 				}
 			}
+			if (SenderNumber <= 8)
+			{
+				Cost8.Text = Cost9.Text;
+				Count8.Text = Count9.Text;
+				Total8.Text = Total9.Text;
+				BuildItem8.Text = BuildItem9.Text;
+				if (BuildItem8.Text == "" && Row9.Visibility == Visibility.Hidden)
+				{
+					Row8.Visibility = Visibility.Hidden;
+				}
+			}
 
 		}
 
@@ -260,7 +271,7 @@ namespace XOCalculator
 					}
 					break;
 				case 7:
-					Cost7.Text = CalculateCostOfItem(BuildItem6.Text).ToString();
+					Cost7.Text = CalculateCostOfItem(BuildItem7.Text).ToString();
 					if (Count7.Text == "")
 					{
 						Count7.Text = "1";
@@ -270,6 +281,98 @@ namespace XOCalculator
 					{
 						Row8.Visibility = Visibility.Visible;
 					}
+					break;
+				case 8:
+					Cost8.Text = CalculateCostOfItem(BuildItem8.Text).ToString();
+					if (Count8.Text == "")
+					{
+						Count8.Text = "1";
+					}
+					Total8.Text = (float.Parse(Cost8.Text) * float.Parse(Count8.Text)).ToString();
+					if (float.Parse(Cost8.Text) > 0)
+					{
+						Row9.Visibility = Visibility.Visible;
+					}
+					break;
+				case 9:
+					Cost9.Text = CalculateCostOfItem(BuildItem9.Text).ToString();
+					if (Count9.Text == "")
+					{
+						Count9.Text = "1";
+					}
+					Total9.Text = (float.Parse(Cost9.Text) * float.Parse(Count9.Text)).ToString();
+					if (float.Parse(Cost9.Text) > 0)
+					{
+						Row10.Visibility = Visibility.Visible;
+					}
+					break;
+				case 10:
+					Cost10.Text = CalculateCostOfItem(BuildItem10.Text).ToString();
+					if (Count10.Text == "")
+					{
+						Count10.Text = "1";
+					}
+					Total10.Text = (float.Parse(Cost10.Text) * float.Parse(Count10.Text)).ToString();
+					if (float.Parse(Cost10.Text) > 0)
+					{
+						Row11.Visibility = Visibility.Visible;
+					}
+					break;
+				case 11:
+					Cost11.Text = CalculateCostOfItem(BuildItem11.Text).ToString();
+					if (Count11.Text == "")
+					{
+						Count11.Text = "1";
+					}
+					Total11.Text = (float.Parse(Cost11.Text) * float.Parse(Count11.Text)).ToString();
+					if (float.Parse(Cost11.Text) > 0)
+					{
+						Row12.Visibility = Visibility.Visible;
+					}
+					break;
+				case 12:
+					Cost12.Text = CalculateCostOfItem(BuildItem12.Text).ToString();
+					if (Count12.Text == "")
+					{
+						Count12.Text = "1";
+					}
+					Total12.Text = (float.Parse(Cost12.Text) * float.Parse(Count12.Text)).ToString();
+					if (float.Parse(Cost12.Text) > 0)
+					{
+						Row13.Visibility = Visibility.Visible;
+					}
+					break;
+				case 13:
+					Cost13.Text = CalculateCostOfItem(BuildItem13.Text).ToString();
+					if (Count13.Text == "")
+					{
+						Count13.Text = "1";
+					}
+					Total13.Text = (float.Parse(Cost13.Text) * float.Parse(Count13.Text)).ToString();
+					if (float.Parse(Cost13.Text) > 0)
+					{
+						Row14.Visibility = Visibility.Visible;
+					}
+					break;
+				case 14:
+					Cost14.Text = CalculateCostOfItem(BuildItem14.Text).ToString();
+					if (Count14.Text == "")
+					{
+						Count14.Text = "1";
+					}
+					Total14.Text = (float.Parse(Cost14.Text) * float.Parse(Count14.Text)).ToString();
+					if (float.Parse(Cost14.Text) > 0)
+					{
+						Row15.Visibility = Visibility.Visible;
+					}
+					break;
+				case 15:
+					Cost15.Text = CalculateCostOfItem(BuildItem15.Text).ToString();
+					if (Count15.Text == "")
+					{
+						Count15.Text = "1";
+					}
+					Total15.Text = (float.Parse(Cost15.Text) * float.Parse(Count15.Text)).ToString();
 					break;
 			}
         }
