@@ -33,8 +33,8 @@ namespace XOCalculator
             InitializeComponent();//starts UI
             if (!File.Exists("Savefile.txt"))
             {
-                string[] emptyFile = new string[] {"0", "0", "0", "0", "0", "0", "0" };
-                File.WriteAllLines("Savefile.txt",emptyFile);
+                string[] emptyFile = new string[] { "0", "0", "0", "0", "0", "0", "0" };
+                File.WriteAllLines("Savefile.txt", emptyFile);
             }
             if (!File.Exists("Items.txt"))
             {
@@ -75,16 +75,20 @@ namespace XOCalculator
                 Item3Value.ItemsSource = AllItems;
                 BuildItem1.FilterMode = AutoCompleteFilterMode.Contains;
                 BuildItem1.ItemsSource = AllItems;
-				BuildItem2.FilterMode = AutoCompleteFilterMode.Contains;
-				BuildItem2.ItemsSource = AllItems;
-				BuildItem3.FilterMode = AutoCompleteFilterMode.Contains;
-				BuildItem3.ItemsSource = AllItems;
-				BuildItem4.FilterMode = AutoCompleteFilterMode.Contains;
-				BuildItem4.ItemsSource = AllItems;
-				BuildItem5.FilterMode = AutoCompleteFilterMode.Contains;
-				BuildItem5.ItemsSource = AllItems;
-				BuildItem6.FilterMode = AutoCompleteFilterMode.Contains;
-				BuildItem6.ItemsSource = AllItems;
+                BuildItem2.FilterMode = AutoCompleteFilterMode.Contains;
+                BuildItem2.ItemsSource = AllItems;
+                BuildItem3.FilterMode = AutoCompleteFilterMode.Contains;
+                BuildItem3.ItemsSource = AllItems;
+                BuildItem4.FilterMode = AutoCompleteFilterMode.Contains;
+                BuildItem4.ItemsSource = AllItems;
+                BuildItem5.FilterMode = AutoCompleteFilterMode.Contains;
+                BuildItem5.ItemsSource = AllItems;
+                BuildItem6.FilterMode = AutoCompleteFilterMode.Contains;
+                BuildItem6.ItemsSource = AllItems;
+				BuildItem7.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem7.ItemsSource = AllItems;
+				BuildItem8.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem8.ItemsSource = AllItems;
 			}
             //takes values from save file
             string[] MaterialCosts = File.ReadAllLines("Savefile.txt");
@@ -95,13 +99,92 @@ namespace XOCalculator
             BatterysCost.Text = MaterialCosts[4];
             ElectronicsCost.Text = MaterialCosts[5];
             UraniumCost.Text = MaterialCosts[6];
-            BuildMenuButtonOpen(null,null);
+            BuildMenuButtonOpen(null, null);
+        }
+        private void Clear(object sender, RoutedEventArgs e)
+        {
+			string senderStr = ((Button)sender).Name;
+			int SenderNumber = int.Parse(senderStr[senderStr.Length - 1].ToString());
+			if (SenderNumber == 1)
+            {
+				Cost1.Text = Cost2.Text;
+				Count1.Text = Count2.Text;
+				Total1.Text = Total2.Text;
+				BuildItem1.Text = BuildItem2.Text;
+			}
+            if (SenderNumber <= 2)
+            {
+				Cost2.Text = Cost3.Text;
+				Count2.Text = Count3.Text;
+				Total2.Text = Total3.Text;
+				BuildItem2.Text = BuildItem3.Text;
+                if (BuildItem2.Text == "" && Row3.Visibility == Visibility.Hidden)
+                {
+                    Row2.Visibility = Visibility.Hidden;
+                }
+			}
+			if (SenderNumber <= 3)
+			{
+				Cost3.Text = Cost4.Text;
+				Count3.Text = Count4.Text;
+				Total3.Text = Total4.Text;
+				BuildItem3.Text = BuildItem4.Text;
+				if (BuildItem3.Text == "" && Row4.Visibility == Visibility.Hidden)
+				{
+					Row3.Visibility = Visibility.Hidden;
+				}
+			}
+			if (SenderNumber <= 4)
+			{
+				Cost4.Text = Cost5.Text;
+				Count4.Text = Count5.Text;
+				Total4.Text = Total5.Text;
+				BuildItem4.Text = BuildItem5.Text;
+				if (BuildItem4.Text == "" && Row5.Visibility == Visibility.Hidden)
+				{
+					Row4.Visibility = Visibility.Hidden;
+				}
+			}
+			if (SenderNumber <= 5)
+			{
+				Cost5.Text = Cost6.Text;
+				Count5.Text = Count6.Text;
+				Total5.Text = Total6.Text;
+				BuildItem5.Text = BuildItem6.Text;
+				if (BuildItem5.Text == "" && Row6.Visibility == Visibility.Hidden)
+				{
+					Row5.Visibility = Visibility.Hidden;
+				}
+			}
+			if (SenderNumber <= 6)
+			{
+				Cost6.Text = Cost7.Text;
+				Count6.Text = Count7.Text;
+				Total6.Text = Total7.Text;
+				BuildItem6.Text = BuildItem7.Text;
+				if (BuildItem6.Text == "" && Row7.Visibility == Visibility.Hidden)
+				{
+					Row6.Visibility = Visibility.Hidden;
+				}
+			}
+			if (SenderNumber <= 7)
+			{
+				Cost7.Text = Cost8.Text;
+				Count7.Text = Count8.Text;
+				Total7.Text = Total8.Text;
+				BuildItem7.Text = BuildItem8.Text;
+				if (BuildItem7.Text == "" && Row8.Visibility == Visibility.Hidden)
+				{
+					Row7.Visibility = Visibility.Hidden;
+				}
+			}
+
 		}
 
         private void ShowCost(object sender, RoutedEventArgs e)
         {
             string senderStr = ((Button)sender).Name;
-			int SenderNumber = int.Parse(senderStr[senderStr.Length - 1].ToString());
+            int SenderNumber = int.Parse(senderStr[senderStr.Length - 1].ToString());
             switch (SenderNumber)
             {
                 case 1:
@@ -110,50 +193,86 @@ namespace XOCalculator
                     {
                         Count1.Text = "1";
                     }
-                    Total1.Text = (float.Parse(Cost1.Text)*float.Parse(Count1.Text)).ToString();
+                    Total1.Text = (float.Parse(Cost1.Text) * float.Parse(Count1.Text)).ToString();
+                    if (float.Parse(Cost1.Text) > 0)
+                    {
+                        Row2.Visibility = Visibility.Visible;
+                    }
                     break;
-				case 2:
-					Cost2.Text = CalculateCostOfItem(BuildItem2.Text).ToString();
-					if (Count2.Text == "")
+                case 2:
+                    Cost2.Text = CalculateCostOfItem(BuildItem2.Text).ToString();
+                    if (Count2.Text == "")
+                    {
+                        Count2.Text = "1";
+                    }
+                    Total2.Text = (float.Parse(Cost2.Text) * float.Parse(Count2.Text)).ToString();
+					if (float.Parse(Cost2.Text) > 0)
 					{
-						Count2.Text = "1";
+						Row3.Visibility = Visibility.Visible;
 					}
-					Total2.Text = (float.Parse(Cost2.Text) * float.Parse(Count2.Text)).ToString();
 					break;
-				case 3:
-					Cost3.Text = CalculateCostOfItem(BuildItem3.Text).ToString();
-					if (Count3.Text == "")
+                case 3:
+                    Cost3.Text = CalculateCostOfItem(BuildItem3.Text).ToString();
+                    if (Count3.Text == "")
+                    {
+                        Count3.Text = "1";
+                    }
+                    Total3.Text = (float.Parse(Cost3.Text) * float.Parse(Count3.Text)).ToString();
+					if (float.Parse(Cost3.Text) > 0)
 					{
-						Count3.Text = "1";
+						Row4.Visibility = Visibility.Visible;
 					}
-					Total3.Text = (float.Parse(Cost3.Text) * float.Parse(Count3.Text)).ToString();
 					break;
-				case 4:
-					Cost4.Text = CalculateCostOfItem(BuildItem4.Text).ToString();
-					if (Count4.Text == "")
+                case 4:
+                    Cost4.Text = CalculateCostOfItem(BuildItem4.Text).ToString();
+                    if (Count4.Text == "")
+                    {
+                        Count4.Text = "1";
+                    }
+                    Total4.Text = (float.Parse(Cost4.Text) * float.Parse(Count4.Text)).ToString();
+					if (float.Parse(Cost4.Text) > 0)
 					{
-						Count4.Text = "1";
+						Row5.Visibility = Visibility.Visible;
 					}
-					Total4.Text = (float.Parse(Cost4.Text) * float.Parse(Count4.Text)).ToString();
 					break;
-				case 5:
-					Cost5.Text = CalculateCostOfItem(BuildItem5.Text).ToString();
-					if (Count5.Text == "")
+                case 5:
+                    Cost5.Text = CalculateCostOfItem(BuildItem5.Text).ToString();
+                    if (Count5.Text == "")
+                    {
+                        Count5.Text = "1";
+                    }
+                    Total5.Text = (float.Parse(Cost5.Text) * float.Parse(Count5.Text)).ToString();
+					if (float.Parse(Cost5.Text) > 0)
 					{
-						Count5.Text = "1";
+						Row6.Visibility = Visibility.Visible;
 					}
-					Total5.Text = (float.Parse(Cost5.Text) * float.Parse(Count5.Text)).ToString();
 					break;
-				case 6:
-					Cost6.Text = CalculateCostOfItem(BuildItem6.Text).ToString();
-					if (Count6.Text == "")
+                case 6:
+                    Cost6.Text = CalculateCostOfItem(BuildItem6.Text).ToString();
+                    if (Count6.Text == "")
+                    {
+                        Count6.Text = "1";
+                    }
+                    Total6.Text = (float.Parse(Cost6.Text) * float.Parse(Count6.Text)).ToString();
+					if (float.Parse(Cost6.Text) > 0)
 					{
-						Count6.Text = "1";
+						Row7.Visibility = Visibility.Visible;
 					}
-					Total6.Text = (float.Parse(Cost6.Text) * float.Parse(Count6.Text)).ToString();
+					break;
+				case 7:
+					Cost7.Text = CalculateCostOfItem(BuildItem6.Text).ToString();
+					if (Count7.Text == "")
+					{
+						Count7.Text = "1";
+					}
+					Total7.Text = (float.Parse(Cost7.Text) * float.Parse(Count7.Text)).ToString();
+					if (float.Parse(Cost7.Text) > 0)
+					{
+						Row8.Visibility = Visibility.Visible;
+					}
 					break;
 			}
-		}
+        }
         private void ResourceMenuHintsButton(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
             if (CalculationMenuHints.Visibility != Visibility.Hidden)
@@ -166,110 +285,132 @@ namespace XOCalculator
                 CalculationMenuHints.Visibility = Visibility.Visible;
                 ShowAndHideHintsButton.Content = "hide hints";
             }
-        }        private void ResourceMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
+        }
+        private void ResourceMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
         {
             if (ResouceMenu.Visibility != Visibility.Hidden)
             {
                 ResouceMenu.Visibility = Visibility.Hidden;//hides resource menu
                 ShowAndHideResourcesButton.Content = "Resources";
                 CalculationMenu.Visibility = Visibility.Visible;
-				BuildMenu.Visibility = Visibility.Hidden;
-				ShowBuildMenubuttion.Content = "Build";
-			}
+                BuildMenu.Visibility = Visibility.Hidden;
+                ShowBuildMenubuttion.Content = "Build";
+            }
             else
             {
                 ResouceMenu.Visibility = Visibility.Visible;//unhides resource menu
                 CalculationMenu.Visibility = Visibility.Hidden;
                 ShowAndHideResourcesButton.Content = "Crafting";
-				BuildMenu.Visibility = Visibility.Hidden;
-				ShowBuildMenubuttion.Content = "Build";
-			}
-
-		}
-		private void BuildMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
-		{
-			if (BuildMenu.Visibility != Visibility.Hidden)
-			{
-				ResouceMenu.Visibility = Visibility.Hidden;//hides resource menu
-				ShowAndHideResourcesButton.Content = "Resources";
-				CalculationMenu.Visibility = Visibility.Visible;
                 BuildMenu.Visibility = Visibility.Hidden;
                 ShowBuildMenubuttion.Content = "Build";
-			}
-			else
-			{
-				ShowBuildMenubuttion.Content = "Crafting";
-				BuildMenu.Visibility= Visibility.Visible;
-				ResouceMenu.Visibility = Visibility.Hidden;//unhides resource menu
-				CalculationMenu.Visibility = Visibility.Hidden;
-				ShowAndHideResourcesButton.Content = "Resources";
-			}
+            }
 
-		}
-		private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation for the Item
+        }
+        private void BuildMenuButtonOpen(object sender, RoutedEventArgs e)//opens and closes resource menu
+        {
+            if (BuildMenu.Visibility != Visibility.Hidden)
+            {
+                ResouceMenu.Visibility = Visibility.Hidden;//hides resource menu
+                ShowAndHideResourcesButton.Content = "Resources";
+                CalculationMenu.Visibility = Visibility.Visible;
+                BuildMenu.Visibility = Visibility.Hidden;
+                ShowBuildMenubuttion.Content = "Build";
+            }
+            else
+            {
+                ShowBuildMenubuttion.Content = "Crafting";
+                BuildMenu.Visibility = Visibility.Visible;
+                ResouceMenu.Visibility = Visibility.Hidden;//unhides resource menu
+                CalculationMenu.Visibility = Visibility.Hidden;
+                ShowAndHideResourcesButton.Content = "Resources";
+            }
+
+        }
+
+        private void Calculate(object sender, RoutedEventArgs e)//Runs the calculation for the Item
         {
             string ItemName = FindValue(ItemSearch.Text.ToLower().ToString());//takes user input and searches for it in algorithm
             string[] Item = SeparateList(ItemName);
             float CraftingCost = 0;
             //validates if there is an input
-            if (scrapQuantity.Text == ""){
+            if (scrapQuantity.Text == "")
+            {
                 scrapQuantity.Text = "0";
             }
-            if (copperQuantity.Text == ""){
+            if (copperQuantity.Text == "")
+            {
                 copperQuantity.Text = "0";
             }
-            if(wiresQuantity.Text == ""){
+            if (wiresQuantity.Text == "")
+            {
                 wiresQuantity.Text = "0";
             }
-            if (batterysQuantity.Text== ""){
+            if (batterysQuantity.Text == "")
+            {
                 batterysQuantity.Text = "0";
             }
-            if (plasticQuantity.Text == ""){
+            if (plasticQuantity.Text == "")
+            {
                 plasticQuantity.Text = "0";
             }
-            if (electronicsQuantity.Text == ""){
+            if (electronicsQuantity.Text == "")
+            {
                 electronicsQuantity.Text = "0";
             }
-            if (uraniumQuantity.Text == ""){
+            if (uraniumQuantity.Text == "")
+            {
                 uraniumQuantity.Text = "0";
             }
-            if (ScrapCost.Text == ""){
+            if (ScrapCost.Text == "")
+            {
                 ScrapCost.Text = "0";
             }
-            if (CopperCost.Text == ""){
+            if (CopperCost.Text == "")
+            {
                 CopperCost.Text = "0";
             }
-            if (WiresCost.Text == ""){
+            if (WiresCost.Text == "")
+            {
                 WiresCost.Text = "0";
             }
-            if (BatterysCost.Text == ""){
+            if (BatterysCost.Text == "")
+            {
                 BatterysCost.Text = "0";
             }
-            if (PlasticCost.Text == ""){
+            if (PlasticCost.Text == "")
+            {
                 PlasticCost.Text = "0";
             }
-            if (ElectronicsCost.Text == ""){
+            if (ElectronicsCost.Text == "")
+            {
                 ElectronicsCost.Text = "0";
             }
-            if (UraniumCost.Text == ""){
+            if (UraniumCost.Text == "")
+            {
                 UraniumCost.Text = "0";
             }
-            if (Item1Count.Text == ""){
+            if (Item1Count.Text == "")
+            {
                 Item1Count.Text = "1";
             }
-            if (Item2Count.Text == ""){
+            if (Item2Count.Text == "")
+            {
                 Item2Count.Text = "1";
             }
-            if (Item3Count.Text == ""){
+            if (Item3Count.Text == "")
+            {
                 Item3Count.Text = "1";
             }
-            if (Item1Value.Text == ""){
+            if (Item1Value.Text == "")
+            {
                 Item1Value.Text = "0";
             }
-            if (Item2Value.Text == ""){
+            if (Item2Value.Text == "")
+            {
                 Item2Value.Text = "0";
             }
-            if (Item3Value.Text == ""){
+            if (Item3Value.Text == "")
+            {
                 Item3Value.Text = "0";
             }
             if (RarityCombobox.Text == "Common" || RarityCombobox.Text == "Relic")
@@ -293,12 +434,13 @@ namespace XOCalculator
                 CraftingCost = 75;
             }
 
-            string[] lines ={ScrapCost.Text.ToString(), CopperCost.Text.ToString(),WiresCost.Text.ToString(), PlasticCost.Text.ToString(), BatterysCost.Text.ToString(), ElectronicsCost.Text.ToString() ,UraniumCost.Text.ToString()};
+            string[] lines = { ScrapCost.Text.ToString(), CopperCost.Text.ToString(), WiresCost.Text.ToString(), PlasticCost.Text.ToString(), BatterysCost.Text.ToString(), ElectronicsCost.Text.ToString(), UraniumCost.Text.ToString() };
             File.WriteAllLines("Savefile.txt", lines);
             //valdades if there is an incorrect input
-            if ((scrapQuantity.Text+copperQuantity.Text+wiresQuantity.Text + batterysQuantity.Text + plasticQuantity.Text + electronicsQuantity.Text + uraniumQuantity.Text).All("1234567890.".Contains))
+            if ((scrapQuantity.Text + copperQuantity.Text + wiresQuantity.Text + batterysQuantity.Text + plasticQuantity.Text + electronicsQuantity.Text + uraniumQuantity.Text).All("1234567890.".Contains))
             {
-                if ((ScrapCost.Text + CopperCost.Text + WiresCost.Text + BatterysCost.Text + PlasticCost.Text + ElectronicsCost.Text + UraniumCost.Text).All("1234567890.".Contains)) {
+                if ((ScrapCost.Text + CopperCost.Text + WiresCost.Text + BatterysCost.Text + PlasticCost.Text + ElectronicsCost.Text + UraniumCost.Text).All("1234567890.".Contains))
+                {
 
                     if ((Item1Count.Text + Item2Count.Text + Item3Count.Text).All("1234567890.".Contains))
                     {
@@ -351,10 +493,11 @@ namespace XOCalculator
         }
         private float CalculateCostOfItem(string ItemName)//calculates cost of item
         {
-            if(ItemName == "Empty" || ItemName =="") {
+            if (ItemName == "Empty" || ItemName == "")
+            {
                 return 0f;
             }
-            if (float.TryParse(ItemName , out float Result))
+            if (float.TryParse(ItemName, out float Result))
             {
                 return Result;
             }
@@ -371,9 +514,9 @@ namespace XOCalculator
                float.Parse(Item[5]) / 100f * float.Parse(PlasticCost.Text) +
                float.Parse(Item[6]) / 10f * float.Parse(ElectronicsCost.Text) +
                float.Parse(Item[7]) / 10f * float.Parse(UraniumCost.Text)
-               +CalculateCostOfItem(Item[8])*float.Parse(Item[9])+
-               CalculateCostOfItem(Item[10]) * float.Parse(Item[11])+
-               CalculateCostOfItem(Item[12]) * float.Parse(Item[13])+ float.Parse(Item[14]);
+               + CalculateCostOfItem(Item[8]) * float.Parse(Item[9]) +
+               CalculateCostOfItem(Item[10]) * float.Parse(Item[11]) +
+               CalculateCostOfItem(Item[12]) * float.Parse(Item[13]) + float.Parse(Item[14]);
         }
 
         private void Search(object sender, RoutedEventArgs e)//Runs the calculation
@@ -435,9 +578,9 @@ namespace XOCalculator
         }
         string[] SeparateList(string ItemName)//finds the name in the text file
         {
-            string[] Item = new string[] { "","","","","","","","", "", "", "", "", "", "","" };
+            string[] Item = new string[] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
             int CountForList = 0;
-            for (int i = 0; i < ItemName.Length;i++)
+            for (int i = 0; i < ItemName.Length; i++)
             {//itarates threw each letter
                 if (ItemName[i] != '_')//finds the end of the first word
                 {
@@ -470,7 +613,7 @@ namespace XOCalculator
                     {
                         return line;
                     }
-                    else { break;}
+                    else { break; }
                 }
             }
             return "Item Not Found (make sure the item is spelt correctly and is craftable)";//returns if item not found
@@ -478,7 +621,7 @@ namespace XOCalculator
 
         void CreateDatabase()
         {
-            string[] data = {  
+            string[] data = {
 "small wheel_15_3_0_0_0_0_0_Empty_0_Empty_0_Empty_0_0",
 "small wheel st_15_3_0_0_0_0_0_Empty_0_Empty_0_Empty_0_0",
 "medium wheel_15_3_0_0_0_0_0_Empty_0_Empty_0_Empty_0_0",
