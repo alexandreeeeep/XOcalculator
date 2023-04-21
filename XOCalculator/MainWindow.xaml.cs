@@ -89,6 +89,20 @@ namespace XOCalculator
 				BuildItem7.ItemsSource = AllItems;
 				BuildItem8.FilterMode = AutoCompleteFilterMode.Contains;
 				BuildItem8.ItemsSource = AllItems;
+				BuildItem9.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem9.ItemsSource = AllItems;
+				BuildItem10.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem10.ItemsSource = AllItems;
+				BuildItem11.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem11.ItemsSource = AllItems;
+				BuildItem12.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem12.ItemsSource = AllItems;
+				BuildItem13.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem13.ItemsSource = AllItems;
+				BuildItem14.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem14.ItemsSource = AllItems;
+				BuildItem15.FilterMode = AutoCompleteFilterMode.Contains;
+				BuildItem15.ItemsSource = AllItems;
 			}
             //takes values from save file
             string[] MaterialCosts = File.ReadAllLines("Savefile.txt");
@@ -101,102 +115,199 @@ namespace XOCalculator
             UraniumCost.Text = MaterialCosts[6];
             BuildMenuButtonOpen(null, null);
         }
+		public static string GetLast(string source, int numberOfChars)
+		{
+			if (numberOfChars >= source.Length)
+				return source;
+			return source.Substring(source.Length - numberOfChars);
+		}
         private void Clear(object sender, RoutedEventArgs e)
         {
-			string senderStr = ((Button)sender).Name;
-			int SenderNumber = int.Parse(senderStr[senderStr.Length - 1].ToString());
-			if (SenderNumber == 1)
+            int SenderNumber;
+            string senderStr = ((Button)sender).Name;
+            try
             {
-				Cost1.Text = Cost2.Text;
-				Count1.Text = Count2.Text;
-				Total1.Text = Total2.Text;
-				BuildItem1.Text = BuildItem2.Text;
-			}
+                //  Block of code to try
+                SenderNumber = int.Parse(GetLast(senderStr, 2).ToString());
+            }
+            catch (Exception)
+            {
+                //  Block of code to handle errors
+                SenderNumber = int.Parse(GetLast(senderStr, 1).ToString());
+            }
+            if (SenderNumber == 1)
+            {
+                Cost1.Text = Cost2.Text;
+                Count1.Text = Count2.Text;
+                Total1.Text = Total2.Text;
+                BuildItem1.Text = BuildItem2.Text;
+            }
             if (SenderNumber <= 2)
             {
-				Cost2.Text = Cost3.Text;
-				Count2.Text = Count3.Text;
-				Total2.Text = Total3.Text;
-				BuildItem2.Text = BuildItem3.Text;
+                Cost2.Text = Cost3.Text;
+                Count2.Text = Count3.Text;
+                Total2.Text = Total3.Text;
+                BuildItem2.Text = BuildItem3.Text;
                 if (BuildItem2.Text == "" && Row3.Visibility == Visibility.Hidden)
                 {
                     Row2.Visibility = Visibility.Hidden;
                 }
-			}
-			if (SenderNumber <= 3)
-			{
-				Cost3.Text = Cost4.Text;
-				Count3.Text = Count4.Text;
-				Total3.Text = Total4.Text;
-				BuildItem3.Text = BuildItem4.Text;
-				if (BuildItem3.Text == "" && Row4.Visibility == Visibility.Hidden)
-				{
-					Row3.Visibility = Visibility.Hidden;
-				}
-			}
-			if (SenderNumber <= 4)
-			{
-				Cost4.Text = Cost5.Text;
-				Count4.Text = Count5.Text;
-				Total4.Text = Total5.Text;
-				BuildItem4.Text = BuildItem5.Text;
-				if (BuildItem4.Text == "" && Row5.Visibility == Visibility.Hidden)
-				{
-					Row4.Visibility = Visibility.Hidden;
-				}
-			}
-			if (SenderNumber <= 5)
-			{
-				Cost5.Text = Cost6.Text;
-				Count5.Text = Count6.Text;
-				Total5.Text = Total6.Text;
-				BuildItem5.Text = BuildItem6.Text;
-				if (BuildItem5.Text == "" && Row6.Visibility == Visibility.Hidden)
-				{
-					Row5.Visibility = Visibility.Hidden;
-				}
-			}
-			if (SenderNumber <= 6)
-			{
-				Cost6.Text = Cost7.Text;
-				Count6.Text = Count7.Text;
-				Total6.Text = Total7.Text;
-				BuildItem6.Text = BuildItem7.Text;
-				if (BuildItem6.Text == "" && Row7.Visibility == Visibility.Hidden)
-				{
-					Row6.Visibility = Visibility.Hidden;
-				}
-			}
-			if (SenderNumber <= 7)
-			{
-				Cost7.Text = Cost8.Text;
-				Count7.Text = Count8.Text;
-				Total7.Text = Total8.Text;
-				BuildItem7.Text = BuildItem8.Text;
-				if (BuildItem7.Text == "" && Row8.Visibility == Visibility.Hidden)
-				{
-					Row7.Visibility = Visibility.Hidden;
-				}
-			}
-			if (SenderNumber <= 8)
-			{
-				Cost8.Text = Cost9.Text;
-				Count8.Text = Count9.Text;
-				Total8.Text = Total9.Text;
-				BuildItem8.Text = BuildItem9.Text;
-				if (BuildItem8.Text == "" && Row9.Visibility == Visibility.Hidden)
-				{
-					Row8.Visibility = Visibility.Hidden;
-				}
-			}
+            }
+            if (SenderNumber <= 3)
+            {
+                Cost3.Text = Cost4.Text;
+                Count3.Text = Count4.Text;
+                Total3.Text = Total4.Text;
+                BuildItem3.Text = BuildItem4.Text;
+                if (BuildItem3.Text == "" && Row4.Visibility == Visibility.Hidden)
+                {
+                    Row3.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 4)
+            {
+                Cost4.Text = Cost5.Text;
+                Count4.Text = Count5.Text;
+                Total4.Text = Total5.Text;
+                BuildItem4.Text = BuildItem5.Text;
+                if (BuildItem4.Text == "" && Row5.Visibility == Visibility.Hidden)
+                {
+                    Row4.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 5)
+            {
+                Cost5.Text = Cost6.Text;
+                Count5.Text = Count6.Text;
+                Total5.Text = Total6.Text;
+                BuildItem5.Text = BuildItem6.Text;
+                if (BuildItem5.Text == "" && Row6.Visibility == Visibility.Hidden)
+                {
+                    Row5.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 6)
+            {
+                Cost6.Text = Cost7.Text;
+                Count6.Text = Count7.Text;
+                Total6.Text = Total7.Text;
+                BuildItem6.Text = BuildItem7.Text;
+                if (BuildItem6.Text == "" && Row7.Visibility == Visibility.Hidden)
+                {
+                    Row6.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 7)
+            {
+                Cost7.Text = Cost8.Text;
+                Count7.Text = Count8.Text;
+                Total7.Text = Total8.Text;
+                BuildItem7.Text = BuildItem8.Text;
+                if (BuildItem7.Text == "" && Row8.Visibility == Visibility.Hidden)
+                {
+                    Row7.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 8)
+            {
+                Cost8.Text = Cost9.Text;
+                Count8.Text = Count9.Text;
+                Total8.Text = Total9.Text;
+                BuildItem8.Text = BuildItem9.Text;
+                if (BuildItem8.Text == "" && Row9.Visibility == Visibility.Hidden)
+                {
+                    Row8.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 9)
+            {
+                Cost9.Text = Cost10.Text;
+                Count9.Text = Count10.Text;
+                Total9.Text = Total10.Text;
+                BuildItem9.Text = BuildItem10.Text;
+                if (BuildItem9.Text == "" && Row10.Visibility == Visibility.Hidden)
+                {
+                    Row9.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 10)
+            {
+                Cost10.Text = Cost11.Text;
+                Count10.Text = Count11.Text;
+                Total10.Text = Total11.Text;
+                BuildItem10.Text = BuildItem11.Text;
+                if (BuildItem10.Text == "" && Row11.Visibility == Visibility.Hidden)
+                {
+                    Row10.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 11)
+            {
+                Cost11.Text = Cost12.Text;
+                Count11.Text = Count12.Text;
+                Total11.Text = Total12.Text;
+                BuildItem11.Text = BuildItem12.Text;
+                if (BuildItem11.Text == "" && Row12.Visibility == Visibility.Hidden)
+                {
+                    Row11.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 12)
+            {
+                Cost12.Text = Cost13.Text;
+                Count12.Text = Count13.Text;
+                Total12.Text = Total13.Text;
+                BuildItem12.Text = BuildItem13.Text;
+                if (BuildItem12.Text == "" && Row13.Visibility == Visibility.Hidden)
+                {
+                    Row12.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 13)
+            {
+                Cost13.Text = Cost14.Text;
+                Count13.Text = Count14.Text;
+                Total13.Text = Total14.Text;
+                BuildItem13.Text = BuildItem14.Text;
+                if (BuildItem13.Text == "" && Row14.Visibility == Visibility.Hidden)
+                {
+                    Row13.Visibility = Visibility.Hidden;
+                }
+            }
+            if (SenderNumber <= 14)
+            {
+                Cost14.Text = Cost15.Text;
+                Count14.Text = Count15.Text;
+                Total14.Text = Total15.Text;
+                BuildItem14.Text = BuildItem15.Text;
+                if (BuildItem14.Text == "" && Row15.Visibility == Visibility.Hidden)
+                {
+                    Row14.Visibility = Visibility.Hidden;
+                }
+            }
+            Cost15.Text = "0";
+            Count15.Text = "";
+            Total15.Text = "0";
+            BuildItem15.Text = "";
+			Row15.Visibility = Visibility.Hidden;
 
 		}
 
         private void ShowCost(object sender, RoutedEventArgs e)
         {
-            string senderStr = ((Button)sender).Name;
-            int SenderNumber = int.Parse(senderStr[senderStr.Length - 1].ToString());
-            switch (SenderNumber)
+            string senderStr = ((Button)sender).Name; 
+            int SenderNumber;
+			try
+			{
+				//  Block of code to try
+				SenderNumber = int.Parse(GetLast(senderStr, 2).ToString());
+			}
+			catch (Exception)
+			{
+				//  Block of code to handle errors
+				SenderNumber = int.Parse(GetLast(senderStr, 1).ToString());
+			}
+			switch (SenderNumber)
             {
                 case 1:
                     Cost1.Text = CalculateCostOfItem(BuildItem1.Text).ToString();
@@ -951,5 +1062,5 @@ namespace XOCalculator
             };
             File.WriteAllLines("Items.txt", data);
         }
-    }
+	}
 }

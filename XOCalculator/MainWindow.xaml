@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
-        Title="XOcalculator" Height="500" Width="800" ResizeMode="NoResize">
+        Title="XOcalculator" Height="520" Width="800" ResizeMode="NoResize">
     <Grid>
         <Canvas
             x:Name="CalculationMenu" Visibility="Hidden" Grid.RowSpan="2">
