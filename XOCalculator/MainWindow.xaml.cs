@@ -1062,5 +1062,10 @@ namespace XOCalculator
             };
             File.WriteAllLines("Items.txt", data);
         }
-	}
+
+        private void Count2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+    }
 }
