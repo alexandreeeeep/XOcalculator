@@ -27,7 +27,6 @@ namespace XOCalculator
 {
     public partial class MainWindow : Window
     {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public MainWindow()//main window
         {
             InitializeComponent();//starts UI
@@ -292,7 +291,81 @@ namespace XOCalculator
 			Row15.Visibility = Visibility.Hidden;
 
 		}
+        void checkNulls()
+        {
+            bool temp;
+            if (Cost1.Text == "" || bool.TryParse(Cost1.Text, out temp)) { Cost1.Text = "0"; }
+            if (Cost2.Text == "" || bool.TryParse(Cost2.Text, out temp)) { Cost2.Text = "0"; }
+            if (Cost3.Text == "" || bool.TryParse(Cost3.Text, out temp)) { Cost3.Text = "0"; }
+            if (Cost4.Text == "" || bool.TryParse(Cost4.Text, out temp)) { Cost4.Text = "0"; }
+            if (Cost5.Text == "" || bool.TryParse(Cost5.Text, out temp)) { Cost5.Text = "0"; }
+            if (Cost6.Text == "" || bool.TryParse(Cost6.Text, out temp)) { Cost6.Text = "0"; }
+            if (Cost7.Text == "" || bool.TryParse(Cost7.Text, out temp)) { Cost7.Text = "0"; }
+            if (Cost8.Text == "" || bool.TryParse(Cost8.Text, out temp)) { Cost8.Text = "0"; }
+            if (Cost9.Text == "" || bool.TryParse(Cost9.Text, out temp)) { Cost9.Text = "0"; }
+            if (Cost10.Text == "" || bool.TryParse(Cost10.Text, out temp)) { Cost10.Text = "0"; }
+            if (Cost11.Text == "" || bool.TryParse(Cost11.Text, out temp)) { Cost11.Text = "0"; }
+            if (Cost12.Text == "" || bool.TryParse(Cost12.Text, out temp)) { Cost12.Text = "0"; }
+            if (Cost13.Text == "" || bool.TryParse(Cost13.Text, out temp)) { Cost13.Text = "0"; }
+            if (Cost14.Text == "" || bool.TryParse(Cost14.Text, out temp)) { Cost14.Text = "0"; }
+            if (Cost15.Text == "" || bool.TryParse(Cost15.Text, out temp)) { Cost15.Text = "0"; }
 
+            if (Count1.Text == "" ||bool.TryParse(Count1.Text, out temp)) { Count1.Text = "1"; }
+            if (Count2.Text == "" ||bool.TryParse(Count2.Text, out temp)) { Count2.Text = "1"; }
+            if (Count3.Text == "" ||bool.TryParse(Count3.Text, out temp)) { Count3.Text = "1"; }
+            if (Count4.Text == "" ||bool.TryParse(Count4.Text, out temp)) { Count4.Text = "1"; }
+            if (Count5.Text == "" ||bool.TryParse(Count5.Text, out temp)) { Count5.Text = "1"; }
+            if (Count6.Text == "" ||bool.TryParse(Count6.Text, out temp)) { Count6.Text = "1"; }
+            if (Count7.Text == "" ||bool.TryParse(Count7.Text, out temp)) { Count7.Text = "1"; }
+            if (Count8.Text == "" ||bool.TryParse(Count8.Text, out temp)) { Count8.Text = "1"; }
+            if (Count9.Text == "" ||bool.TryParse(Count9.Text, out temp)) { Count9.Text = "1"; }
+            if (Count10.Text == ""|| bool.TryParse(Count10.Text, out temp)) { Count10.Text = "1"; }
+            if (Count11.Text == ""|| bool.TryParse(Count11.Text, out temp)) { Count11.Text = "1"; }
+            if (Count12.Text == ""|| bool.TryParse(Count12.Text, out temp)) { Count12.Text = "1"; }
+            if (Count13.Text == ""|| bool.TryParse(Count13.Text, out temp)) { Count13.Text = "1"; }
+            if (Count14.Text == ""|| bool.TryParse(Count14.Text, out temp)) { Count14.Text = "1"; }
+            if (Count15.Text == "" || bool.TryParse(Count15.Text, out temp)) { Count15.Text = "1"; }
+        }
+        private void CalcTotal(object sender, RoutedEventArgs e)
+        {
+            checkNulls();
+            Total1.Text = (float.Parse(Cost1.Text) * float.Parse(Count1.Text)).ToString();
+            Total2.Text = (float.Parse(Cost2.Text) * float.Parse(Count2.Text)).ToString();
+            Total3.Text = (float.Parse(Cost3.Text) * float.Parse(Count3.Text)).ToString();
+            Total4.Text = (float.Parse(Cost4.Text) * float.Parse(Count4.Text)).ToString();
+            Total5.Text = (float.Parse(Cost5.Text) * float.Parse(Count5.Text)).ToString();
+            Total6.Text = (float.Parse(Cost6.Text) * float.Parse(Count6.Text)).ToString();
+            Total7.Text = (float.Parse(Cost7.Text) * float.Parse(Count7.Text)).ToString();
+            Total8.Text = (float.Parse(Cost8.Text) * float.Parse(Count8.Text)).ToString();
+            Total9.Text = (float.Parse(Cost9.Text) * float.Parse(Count9.Text)).ToString();
+            Total10.Text = (float.Parse(Cost10.Text) * float.Parse(Count10.Text)).ToString();
+            Total11.Text = (float.Parse(Cost11.Text) * float.Parse(Count11.Text)).ToString();
+            Total12.Text = (float.Parse(Cost12.Text) * float.Parse(Count12.Text)).ToString();
+            Total13.Text = (float.Parse(Cost13.Text) * float.Parse(Count13.Text)).ToString();
+            Total14.Text = (float.Parse(Cost14.Text) * float.Parse(Count14.Text)).ToString();
+            Total15.Text = (float.Parse(Cost15.Text) * float.Parse(Count15.Text)).ToString();
+            CalculateTotal();
+        }
+        void CalculateTotal()
+        {
+            checkNulls();
+            TotalCost.Text ="Total: "+
+                (float.Parse(Cost1.Text) * float.Parse(Count1.Text)
+               * float.Parse(Cost2.Text) * float.Parse(Count2.Text)
+               * float.Parse(Cost3.Text) * float.Parse(Count3.Text)
+               * float.Parse(Cost4.Text) * float.Parse(Count4.Text)
+               * float.Parse(Cost5.Text) * float.Parse(Count5.Text)
+               * float.Parse(Cost6.Text) * float.Parse(Count6.Text)
+               * float.Parse(Cost7.Text) * float.Parse(Count7.Text)
+               * float.Parse(Cost8.Text) * float.Parse(Count8.Text)
+               * float.Parse(Cost9.Text) * float.Parse(Count9.Text)
+               * float.Parse(Cost10.Text) * float.Parse(Count10.Text)
+               * float.Parse(Cost11.Text) * float.Parse(Count11.Text)
+               * float.Parse(Cost12.Text) * float.Parse(Count12.Text)
+               * float.Parse(Cost13.Text) * float.Parse(Count13.Text)
+               * float.Parse(Cost14.Text) * float.Parse(Count14.Text)
+               * float.Parse(Cost15.Text) * float.Parse(Count15.Text)).ToString();
+        }
         private void ShowCost(object sender, RoutedEventArgs e)
         {
             string senderStr = ((Button)sender).Name; 
@@ -486,6 +559,7 @@ namespace XOCalculator
 					Total15.Text = (float.Parse(Cost15.Text) * float.Parse(Count15.Text)).ToString();
 					break;
 			}
+            CalculateTotal();
         }
         private void ResourceMenuHintsButton(object sender, RoutedEventArgs e)//opens and closes resource menu
         {

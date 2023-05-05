@@ -115,6 +115,7 @@
 
             <Canvas >
                 <TextBlock  Text="Cost per item" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="229" Canvas.Top="6"/>
+                <TextBlock  x:Name="TotalCost" Text="Total" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="660" Canvas.Top="98"/>
                 <TextBlock  Text="Quantity" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="363" Canvas.Top="6"/>
                 <TextBlock  Text="Total cost" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="504" Canvas.Top="6"/>
                 <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="32" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" >
@@ -122,8 +123,9 @@
                 </StackPanel>
                 <Button x:Name="Confirm1" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="179" Canvas.Top="32"/>
                 <Button x:Name="Cancel1" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="32"/>
-                <TextBox x:Name="Cost1" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="34"/>
-                <TextBox x:Name="Count1" Canvas.Left="363" Canvas.Top="33" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="30"/>
+                <TextBox x:Name="Cost1" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="34" MaxLength="6"/>
+                <TextBox x:Name="Count1" Canvas.Left="363" Canvas.Top="33" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41" MaxLength="6"/>
                 <TextBlock x:Name="Total1" Text="0" Canvas.Left="505" Canvas.Top="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 <Canvas x:Name="Row2" Visibility="Hidden">
                     <StackPanel Orientation="Horizontal" Canvas.Left="50" Canvas.Top="62" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" >
@@ -131,8 +133,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel2" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="62"/>
                     <Button x:Name="Confirm2" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="178" Canvas.Top="62"/>
-                    <TextBox x:Name="Cost2" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="62" RenderTransformOrigin="-1.524,-0.276"/>
-                    <TextBox x:Name="Count2" Canvas.Left="365" Canvas.Top="64" HorizontalAlignment="Left" VerticalAlignment="Center" Width="41" TextChanged="Count2_TextChanged"/>
+                    <TextBox x:Name="Cost2" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="62" RenderTransformOrigin="-1.524,-0.276"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="60"/>
+                    <TextBox x:Name="Count2" MaxLength="6" Canvas.Left="365" Canvas.Top="64" HorizontalAlignment="Left" VerticalAlignment="Center" Width="41" TextChanged="Count2_TextChanged"/>
                     <TextBlock x:Name="Total2" Text="0" Canvas.Left="505" Canvas.Top="64" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row3" Visibility="Hidden">
@@ -141,8 +144,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel3" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="92"/>
                     <Button x:Name="Confirm3" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="179" Canvas.Top="92"/>
-                    <TextBox x:Name="Cost3" Text="0" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="240" Canvas.Top="93"/>
-                    <TextBox x:Name="Count3" Canvas.Left="365" Canvas.Top="94" HorizontalAlignment="Left" VerticalAlignment="Center" Width="41"/>
+                    <TextBox x:Name="Cost3" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="240" Canvas.Top="93"/>
+                    <TextBox x:Name="Count3" MaxLength="6" Canvas.Left="365" Canvas.Top="94" HorizontalAlignment="Left" VerticalAlignment="Center" Width="41"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="90"/>
                     <TextBlock x:Name="Total3" Text="0" Canvas.Left="505" Canvas.Top="94" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row4" Visibility="Hidden">
@@ -151,8 +155,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel4" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="122"/>
                     <Button x:Name="Confirm4" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="179" Canvas.Top="122"/>
-                    <TextBox x:Name="Cost4" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="122"/>
-                    <TextBox x:Name="Count4" Canvas.Left="365" Canvas.Top="122" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost4" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="122"/>
+                    <TextBox x:Name="Count4" MaxLength="6" Canvas.Left="365" Canvas.Top="122" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="120"/>
                     <TextBlock x:Name="Total4" Text="0" Canvas.Left="505" Canvas.Top="124" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row5" Visibility="Hidden">
@@ -161,8 +166,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel5" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="152"/>
                     <Button x:Name="Confirm5" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="179" Canvas.Top="152"/>
-                    <TextBox x:Name="Cost5" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="152"/>
-                    <TextBox x:Name="Count5" Canvas.Left="365" Canvas.Top="153" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost5" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="152"/>
+                    <TextBox x:Name="Count5" MaxLength="6" Canvas.Left="365" Canvas.Top="153" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="150"/>
                     <TextBlock x:Name="Total5" Text="0" Canvas.Left="505" Canvas.Top="154" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row6" Visibility="Hidden">
@@ -171,8 +177,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel6" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="182"/>
                     <Button x:Name="Confirm6" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="179" Canvas.Top="182"/>
-                    <TextBox x:Name="Cost6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="182"/>
-                    <TextBox x:Name="Count6" Canvas.Left="364" Canvas.Top="184" HorizontalAlignment="Left" VerticalAlignment="Center" Width="41"/>
+                    <TextBox x:Name="Cost6" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="182"/>
+                    <TextBox x:Name="Count6" MaxLength="6" Canvas.Left="364" Canvas.Top="184" HorizontalAlignment="Left" VerticalAlignment="Center" Width="41"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="180"/>
                     <TextBlock x:Name="Total6" Text="0" Canvas.Left="505" Canvas.Top="184" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row7" Visibility="Hidden">
@@ -181,8 +188,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel7" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="212"/>
                     <Button x:Name="Confirm7" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="179" Canvas.Top="212"/>
-                    <TextBox x:Name="Cost7" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="212"/>
-                    <TextBox x:Name="Count7" Canvas.Left="364" Canvas.Top="214" HorizontalAlignment="Left" VerticalAlignment="Center" Width="41"/>
+                    <TextBox x:Name="Cost7" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="212"/>
+                    <TextBox x:Name="Count7" MaxLength="6" Canvas.Left="364" Canvas.Top="214" HorizontalAlignment="Left" VerticalAlignment="Center" Width="41"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="210"/>
                     <TextBlock x:Name="Total7" Text="0" Canvas.Left="505" Canvas.Top="214" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row8" Visibility="Hidden">
@@ -191,8 +199,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel8" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="242"/>
                     <Button x:Name="Confirm8" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="179" Canvas.Top="242"/>
-                    <TextBox x:Name="Cost8" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="242"/>
-                    <TextBox x:Name="Count8" Canvas.Left="364" Canvas.Top="242" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost8" MaxLength="6" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="242"/>
+                    <TextBox x:Name="Count8" MaxLength="6" Canvas.Left="364" Canvas.Top="242" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="240"/>
                     <TextBlock x:Name="Total8" Text="0" Canvas.Left="505" Canvas.Top="244" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row9" Visibility="Hidden">
@@ -201,8 +210,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel9" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="272"/>
                     <Button x:Name="Confirm9" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="179" Canvas.Top="272"/>
-                    <TextBox x:Name="Cost9" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="272"/>
-                    <TextBox x:Name="Count9" Canvas.Left="364" Canvas.Top="272" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost9" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="272"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="270"/>
+                    <TextBox x:Name="Count9" MaxLength="6" Canvas.Left="364" Canvas.Top="272" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                     <TextBlock x:Name="Total9" Text="0" Canvas.Left="505" Canvas.Top="274" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row10" Visibility="Hidden">
@@ -211,8 +221,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel10" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="302"/>
                     <Button x:Name="Confirm10" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="179" Canvas.Top="302"/>
-                    <TextBox x:Name="Cost10" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="302"/>
-                    <TextBox x:Name="Count10" Canvas.Left="364" Canvas.Top="302" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost10" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="302"/>
+                    <TextBox x:Name="Count10" MaxLength="6" Canvas.Left="364" Canvas.Top="302" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="300"/>
                     <TextBlock x:Name="Total10" Text="0" Canvas.Left="505" Canvas.Top="304" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row11" Visibility="Hidden">
@@ -221,8 +232,8 @@
                     </StackPanel>
                     <Button x:Name="Cancel11" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="332"/>
                     <Button x:Name="Confirm11" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="179" Canvas.Top="332"/>
-                    <TextBox x:Name="Cost11" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="332"/>
-                    <TextBox x:Name="Count11" Canvas.Left="365" Canvas.Top="332" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost11" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="332"/>
+                    <TextBox x:Name="Count11" MaxLength="6" Canvas.Left="365" Canvas.Top="332" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                     <TextBlock x:Name="Total11" Text="0" Canvas.Left="505" Canvas.Top="334" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row12" Visibility="Hidden">
@@ -231,8 +242,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel12" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="362"/>
                     <Button x:Name="Confirm12" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="179" Canvas.Top="362"/>
-                    <TextBox x:Name="Cost12" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="362"/>
-                    <TextBox x:Name="Count12" Canvas.Left="364" Canvas.Top="362" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost12" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="362"/>
+                    <TextBox x:Name="Count12" MaxLength="6" Canvas.Left="364" Canvas.Top="362" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="330"/>
                     <TextBlock x:Name="Total12" Text="0" Canvas.Left="505" Canvas.Top="364" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row13" Visibility="Hidden">
@@ -241,8 +253,8 @@
                     </StackPanel>
                     <Button x:Name="Cancel13" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="392"/>
                     <Button x:Name="Confirm13" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="179" Canvas.Top="392"/>
-                    <TextBox x:Name="Cost13" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="392"/>
-                    <TextBox x:Name="Count13" Canvas.Left="365" Canvas.Top="392" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost13" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="392"/>
+                    <TextBox x:Name="Count13" MaxLength="6" Canvas.Left="365" Canvas.Top="392" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                     <TextBlock x:Name="Total13" Text="0" Canvas.Left="505" Canvas.Top="394" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row14" Visibility="Hidden">
@@ -251,8 +263,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel14" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="422"/>
                     <Button x:Name="Confirm14" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ShowCost" Canvas.Left="179" Canvas.Top="422"/>
-                    <TextBox x:Name="Cost14" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="422"/>
-                    <TextBox x:Name="Count14" Canvas.Left="365" Canvas.Top="422" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost14" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="422"/>
+                    <TextBox x:Name="Count14" MaxLength="6" Canvas.Left="365" Canvas.Top="422" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41" />
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="360"/>
                     <TextBlock x:Name="Total14" Text="0" Canvas.Left="505" Canvas.Top="424" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
                 <Canvas x:Name="Row15" Visibility="Hidden">
@@ -261,8 +274,9 @@
                     </StackPanel>
                     <Button x:Name="Cancel15" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Clear" Canvas.Left="609" Canvas.Top="452"/>
                     <Button x:Name="Confirm15" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ShowCost" Canvas.Left="179" Canvas.Top="452"/>
-                    <TextBox x:Name="Cost15" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="452"/>
-                    <TextBox x:Name="Count15" Canvas.Left="365" Canvas.Top="452" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
+                    <TextBox x:Name="Cost15" MaxLength="6" Text="0" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="240" Canvas.Top="452"/>
+                    <Button  Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CalcTotal" Canvas.Left="448" Canvas.Top="390"/>
+                    <TextBox x:Name="Count15" MaxLength="6" Canvas.Left="365" Canvas.Top="452" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                     <TextBlock x:Name="Total15" Text="0" Canvas.Left="505" Canvas.Top="454" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41"/>
                 </Canvas>
             </Canvas>
