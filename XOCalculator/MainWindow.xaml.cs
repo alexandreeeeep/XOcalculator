@@ -291,44 +291,43 @@ namespace XOCalculator
 			Row15.Visibility = Visibility.Hidden;
 
 		}
-        void checkNulls()
+        void CheckNulls()
         {
-            bool temp;
-            if (Cost1.Text == "" || bool.TryParse(Cost1.Text, out temp)) { Cost1.Text = "0"; }
-            if (Cost2.Text == "" || bool.TryParse(Cost2.Text, out temp)) { Cost2.Text = "0"; }
-            if (Cost3.Text == "" || bool.TryParse(Cost3.Text, out temp)) { Cost3.Text = "0"; }
-            if (Cost4.Text == "" || bool.TryParse(Cost4.Text, out temp)) { Cost4.Text = "0"; }
-            if (Cost5.Text == "" || bool.TryParse(Cost5.Text, out temp)) { Cost5.Text = "0"; }
-            if (Cost6.Text == "" || bool.TryParse(Cost6.Text, out temp)) { Cost6.Text = "0"; }
-            if (Cost7.Text == "" || bool.TryParse(Cost7.Text, out temp)) { Cost7.Text = "0"; }
-            if (Cost8.Text == "" || bool.TryParse(Cost8.Text, out temp)) { Cost8.Text = "0"; }
-            if (Cost9.Text == "" || bool.TryParse(Cost9.Text, out temp)) { Cost9.Text = "0"; }
-            if (Cost10.Text == "" || bool.TryParse(Cost10.Text, out temp)) { Cost10.Text = "0"; }
-            if (Cost11.Text == "" || bool.TryParse(Cost11.Text, out temp)) { Cost11.Text = "0"; }
-            if (Cost12.Text == "" || bool.TryParse(Cost12.Text, out temp)) { Cost12.Text = "0"; }
-            if (Cost13.Text == "" || bool.TryParse(Cost13.Text, out temp)) { Cost13.Text = "0"; }
-            if (Cost14.Text == "" || bool.TryParse(Cost14.Text, out temp)) { Cost14.Text = "0"; }
-            if (Cost15.Text == "" || bool.TryParse(Cost15.Text, out temp)) { Cost15.Text = "0"; }
-
-            if (Count1.Text == "" ||bool.TryParse(Count1.Text, out temp)) { Count1.Text = "1"; }
-            if (Count2.Text == "" ||bool.TryParse(Count2.Text, out temp)) { Count2.Text = "1"; }
-            if (Count3.Text == "" ||bool.TryParse(Count3.Text, out temp)) { Count3.Text = "1"; }
-            if (Count4.Text == "" ||bool.TryParse(Count4.Text, out temp)) { Count4.Text = "1"; }
-            if (Count5.Text == "" ||bool.TryParse(Count5.Text, out temp)) { Count5.Text = "1"; }
-            if (Count6.Text == "" ||bool.TryParse(Count6.Text, out temp)) { Count6.Text = "1"; }
-            if (Count7.Text == "" ||bool.TryParse(Count7.Text, out temp)) { Count7.Text = "1"; }
-            if (Count8.Text == "" ||bool.TryParse(Count8.Text, out temp)) { Count8.Text = "1"; }
-            if (Count9.Text == "" ||bool.TryParse(Count9.Text, out temp)) { Count9.Text = "1"; }
-            if (Count10.Text == ""|| bool.TryParse(Count10.Text, out temp)) { Count10.Text = "1"; }
-            if (Count11.Text == ""|| bool.TryParse(Count11.Text, out temp)) { Count11.Text = "1"; }
-            if (Count12.Text == ""|| bool.TryParse(Count12.Text, out temp)) { Count12.Text = "1"; }
-            if (Count13.Text == ""|| bool.TryParse(Count13.Text, out temp)) { Count13.Text = "1"; }
-            if (Count14.Text == ""|| bool.TryParse(Count14.Text, out temp)) { Count14.Text = "1"; }
-            if (Count15.Text == "" || bool.TryParse(Count15.Text, out temp)) { Count15.Text = "1"; }
+            if (!Cost1.Text.Any("1234567890".Contains)) { Cost1.Text = "0"; }
+            if (!Cost2.Text.Any("1234567890".Contains)) { Cost2.Text = "0"; }
+            if (!Cost3.Text.Any("1234567890".Contains)) { Cost3.Text = "0"; }
+            if (!Cost4.Text.Any("1234567890".Contains)) { Cost4.Text = "0"; }
+            if (!Cost5.Text.Any("1234567890".Contains)) { Cost5.Text = "0"; }
+            if (!Cost6.Text.Any("1234567890".Contains)) { Cost6.Text = "0"; }
+            if (!Cost7.Text.Any("1234567890".Contains)) { Cost7.Text = "0"; }
+            if (!Cost8.Text.Any("1234567890".Contains)) { Cost8.Text = "0"; }
+            if (!Cost9.Text.Any("1234567890".Contains)) { Cost9.Text = "0"; }
+            if (!Cost10.Text.Any("1234567890".Contains)) { Cost10.Text = "0"; }
+            if (!Cost11.Text.Any("1234567890".Contains)) { Cost11.Text = "0"; }
+            if (!Cost12.Text.Any("1234567890".Contains)) { Cost12.Text = "0"; }
+            if (!Cost13.Text.Any("1234567890".Contains)) { Cost13.Text = "0"; }
+            if (!Cost14.Text.Any("1234567890".Contains)) { Cost14.Text = "0"; }
+            if (!Cost15.Text.Any("1234567890".Contains)) { Cost15.Text = "0"; }
+                
+            if (!Count1.Text.Any("1234567890".Contains)) { Count1.Text = "1"; }
+            if (!Count2.Text.Any("1234567890".Contains)) { Count2.Text = "1"; }
+            if (!Count3.Text.Any("1234567890".Contains)) { Count3.Text = "1"; }
+            if (!Count4.Text.Any("1234567890".Contains)) { Count4.Text = "1"; }
+            if (!Count5.Text.Any("1234567890".Contains)) { Count5.Text = "1"; }
+            if (!Count6.Text.Any("1234567890".Contains)) { Count6.Text = "1"; }
+            if (!Count7.Text.Any("1234567890".Contains)) { Count7.Text = "1"; }
+            if (!Count8.Text.Any("1234567890".Contains)) { Count8.Text = "1"; }
+            if (!Count9.Text.Any("1234567890".Contains)) { Count9.Text = "1"; }
+            if (!Count10.Text.Any("1234567890".Contains)) { Count10.Text = "1"; }
+            if (!Count11.Text.Any("1234567890".Contains)) { Count11.Text = "1"; }
+            if (!Count12.Text.Any("1234567890".Contains)) { Count12.Text = "1"; }
+            if (!Count13.Text.Any("1234567890".Contains)) { Count13.Text = "1"; }
+            if (!Count14.Text.Any("1234567890".Contains)) { Count14.Text = "1"; }
+            if (!Count15.Text.Any("1234567890".Contains)) { Count15.Text = "1"; }
         }
         private void CalcTotal(object sender, RoutedEventArgs e)
         {
-            checkNulls();
+            CheckNulls();
             Total1.Text = (float.Parse(Cost1.Text) * float.Parse(Count1.Text)).ToString();
             Total2.Text = (float.Parse(Cost2.Text) * float.Parse(Count2.Text)).ToString();
             Total3.Text = (float.Parse(Cost3.Text) * float.Parse(Count3.Text)).ToString();
@@ -348,23 +347,23 @@ namespace XOCalculator
         }
         void CalculateTotal()
         {
-            checkNulls();
+            CheckNulls();
             TotalCost.Text ="Total: "+
                 (float.Parse(Cost1.Text) * float.Parse(Count1.Text)
-               * float.Parse(Cost2.Text) * float.Parse(Count2.Text)
-               * float.Parse(Cost3.Text) * float.Parse(Count3.Text)
-               * float.Parse(Cost4.Text) * float.Parse(Count4.Text)
-               * float.Parse(Cost5.Text) * float.Parse(Count5.Text)
-               * float.Parse(Cost6.Text) * float.Parse(Count6.Text)
-               * float.Parse(Cost7.Text) * float.Parse(Count7.Text)
-               * float.Parse(Cost8.Text) * float.Parse(Count8.Text)
-               * float.Parse(Cost9.Text) * float.Parse(Count9.Text)
-               * float.Parse(Cost10.Text) * float.Parse(Count10.Text)
-               * float.Parse(Cost11.Text) * float.Parse(Count11.Text)
-               * float.Parse(Cost12.Text) * float.Parse(Count12.Text)
-               * float.Parse(Cost13.Text) * float.Parse(Count13.Text)
-               * float.Parse(Cost14.Text) * float.Parse(Count14.Text)
-               * float.Parse(Cost15.Text) * float.Parse(Count15.Text)).ToString();
+               + float.Parse(Cost2.Text) * float.Parse(Count2.Text)
+               + float.Parse(Cost3.Text) * float.Parse(Count3.Text)
+               + float.Parse(Cost4.Text) * float.Parse(Count4.Text)
+               + float.Parse(Cost5.Text) * float.Parse(Count5.Text)
+               + float.Parse(Cost6.Text) * float.Parse(Count6.Text)
+               + float.Parse(Cost7.Text) * float.Parse(Count7.Text)
+               + float.Parse(Cost8.Text) * float.Parse(Count8.Text)
+               + float.Parse(Cost9.Text) * float.Parse(Count9.Text)
+               + float.Parse(Cost10.Text) * float.Parse(Count10.Text)
+               + float.Parse(Cost11.Text) * float.Parse(Count11.Text)
+               + float.Parse(Cost12.Text) * float.Parse(Count12.Text)
+               + float.Parse(Cost13.Text) * float.Parse(Count13.Text)
+               + float.Parse(Cost14.Text) * float.Parse(Count14.Text)
+               + float.Parse(Cost15.Text) * float.Parse(Count15.Text)).ToString();
         }
         private void ShowCost(object sender, RoutedEventArgs e)
         {
@@ -559,6 +558,7 @@ namespace XOCalculator
 					Total15.Text = (float.Parse(Cost15.Text) * float.Parse(Count15.Text)).ToString();
 					break;
 			}
+            CheckNulls();
             CalculateTotal();
         }
         private void ResourceMenuHintsButton(object sender, RoutedEventArgs e)//opens and closes resource menu
